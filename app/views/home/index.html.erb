@@ -8,6 +8,6 @@
   </div>
 <div>
   <%= collection_check_boxes 'check', :todo_ids, Todo.all, :id, :title do |b| %>
-    <%= b.check_box %><%= b.label %><br/>
+    <%= b.check_box %><%= b.label id: b.value %><br/>
   <% end %>
 </div>
