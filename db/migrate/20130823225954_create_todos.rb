@@ -1,7 +1,7 @@
 class CreateTodos < ActiveRecord::Migration
   def change
     create_table :todos do |t|
-      t.string :title
+      t.string :name
       t.string :description
       t.datetime :date
 

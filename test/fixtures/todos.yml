@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  title: MyString
+  name: MyString
   description: MyString
-  date: 2013-08-22 22:20:06
+  date: 2013-08-24 02:59:54
 
 two:
-  title: MyString
+  name: MyString
   description: MyString
-  date: 2013-08-22 22:20:06
+  date: 2013-08-24 02:59:54
