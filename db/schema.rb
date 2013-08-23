@@ -11,7 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130823225549) do
 ActiveRecord::Schema.define(version: 20130823225954) do
 
   create_table "events", force: true do |t|
@@ -23,6 +22,7 @@ ActiveRecord::Schema.define(version: 20130823225954) do
   end
 
   create_table "todo_lists", force: true do |t|
+    t.integer  "todo_id"
     t.string   "name"
     t.string   "description"
     t.datetime "created_at"
