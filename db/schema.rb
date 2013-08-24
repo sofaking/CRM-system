@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20130823225954) do
     t.integer  "todo_list_id"
     t.string   "name"
     t.string   "description"
+    t.boolean  "done"
     t.datetime "date"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -3,6 +3,7 @@ class CreateTodos < ActiveRecord::Migration
     t.belongs_to :todo_list
     t.string :name
     t.string :description
+    t.boolean :done
     t.datetime :date
 
     t.timestamps
