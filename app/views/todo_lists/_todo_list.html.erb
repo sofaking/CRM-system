@@ -7,10 +7,12 @@
   </div>
   <div>
   <% todo_list.todos.each do |e| %>
-    <%= check_box_tag e.done %>
-    <%= 'done' %>
-    <%= e.name %>
-    <br/>
+    <%= form_for(e) do |f| %>
+      <%= f.check_box :done %>
+      <%= f.text_field :name, id: "todo_#{:id}" %>
+      <%= f.submit %>
+      <br/>
+    <% end %>
   <% end %>
   </div>
   <div>
