@@ -8,8 +8,8 @@
   <div>
   <% todo_list.todos.each do |e| %>
     <%= form_for(e) do |f| %>
-      <%= f.check_box :done %>
-      <%= f.text_field :name, id: "todo_#{:id}" %>
+      <%= f.check_box :done, name: e.id %>
+      <%= f.text_field :name, id: "todo_name_#{e.id}" %>
       <%= f.submit %>
       <br/>
     <% end %>
