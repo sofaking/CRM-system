@@ -19,6 +19,13 @@
     <%= f.label :description %><br>
     <%= f.text_field :description %>
   </div>
+  <div class="field">
+    <%= f.collection_check_boxes :todo_ids, Todo.all, :id, :name do |b| %>
+      <%= b.check_box %>
+      <%= b.label %>
+      <br/>
+    <% end %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

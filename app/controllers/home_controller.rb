@@ -3,5 +3,6 @@ class HomeController < ApplicationController
   
   def index
     @todos = Todo.all
+    @todo_lists = TodoList.all
   end
 end
