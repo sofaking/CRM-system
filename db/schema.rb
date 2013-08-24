@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20130823225954) do
   end
 
   create_table "todo_lists", force: true do |t|
-    t.integer  "todo_id"
     t.string   "name"
     t.string   "description"
     t.datetime "created_at"
@@ -30,6 +29,7 @@ ActiveRecord::Schema.define(version: 20130823225954) do
   end
 
   create_table "todos", force: true do |t|
+    t.integer  "todo_list_id"
     t.string   "name"
     t.string   "description"
     t.datetime "date"
