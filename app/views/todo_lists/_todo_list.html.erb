@@ -1,21 +1,10 @@
-<h1>To-dos</h1>
-
-<% @todo_lists.each do |todo_list| %>
-  <div>
+<div>
   <%= link_to todo_list.name, todo_list_path(todo_list) %><br/>
   <%= todo_list.description %>
-  </div>
-  <div>
-  <% todo_list.todos.each do |e| %>
-    <%= form_for(e) do |f| %>
-      <%= f.check_box :done, name: e.id %>
-      <%= f.text_field :name, id: "todo_name_#{e.id}" %>
-      <%= f.submit %>
-      <br/>
-    <% end %>
-  <% end %>
-  </div>
-<% end %>
+</div>
+<div>
+  <%= render todo_list.todos %>
+</div>
 <br>
 
 <%= link_to 'New Todo list', new_todo_list_path %>
