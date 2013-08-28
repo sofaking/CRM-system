@@ -1,5 +1,6 @@
 class TodosController < ApplicationController
   before_action :set_todo, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authorize
 
   # GET /todos
   # GET /todos.json
@@ -42,7 +43,7 @@ class TodosController < ApplicationController
   def update
     respond_to do |format|
       if @todo.update(todo_params)
-        format.html { redirect_to @todo, notice: 'Todo was successfully updated.' }
+        format.html { redirect_to home_url, notice: 'Todo was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
