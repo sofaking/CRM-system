@@ -1,3 +1,3 @@
 class Todo < ActiveRecord::Base
-  belongs_to :todo_list
+  belongs_to :todo_list, touch: true
 end
