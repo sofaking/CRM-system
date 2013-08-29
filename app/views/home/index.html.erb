@@ -9,6 +9,8 @@
 
 <h1>To-do lists</h1>
 
-<%= render @todo_lists %>
+<div id="todo_lists">
+  <%= render @todo_lists %>
+</div>
 
 <%= link_to "add todo list", todo_lists_path({ todo_list: { name: "New todo list" }, "commit"=>"Create Todo List"}), method: :create %>
