@@ -15,7 +15,6 @@
     <div class="field">
       <%= f.check_box :done, onclick: "submit()" %>
       <%= f.text_field :name %>
-      <%= f.date_select :date %>
       <%= f.submit %>
       <%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
