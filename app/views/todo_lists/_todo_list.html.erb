@@ -1,5 +1,5 @@
 <% cache todo_list do %>
-  <div>
+  <div class="form_todo_list">
     <%= form_for(todo_list) do |f| %>
       <% if todo_list.errors.any? %>
         <div id="error_explanation">
@@ -18,9 +18,9 @@
         <%= f.text_field :description %><br/>
         <%= f.submit %>
       </div>
-      <div class="field">
+      <div class="destroy">
         <%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <div class="field">
+      </div>
     <% end %>
   </div>
   <div>
