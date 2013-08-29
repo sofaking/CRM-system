@@ -1,22 +1,24 @@
 <% cache todo do %>
-  <%= form_for(todo) do |f| %>
-    <% if todo.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(todo.errors.count, "error") %> prohibited this todo from being saved:</h2>
+  <div class="form_todo">
+    <%= form_for(todo) do |f| %>
+      <% if todo.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(todo.errors.count, "error") %> prohibited this todo from being saved:</h2>
 
-        <ul>
-        <% todo.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
+          <ul>
+          <% todo.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+        <%= f.check_box :done, onclick: "submit()" %>
+        <%= f.text_field :name %>
+        <%= f.submit %>
+        <%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>
     <% end %>
-
-    <div class="field">
-      <%= f.check_box :done, onclick: "submit()" %>
-      <%= f.text_field :name %>
-      <%= f.submit %>
-      <%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </div>
-  <% end %>
+  </div>
 <% end %>
