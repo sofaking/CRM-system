@@ -18,6 +18,7 @@
       <%= f.label :description %><%= f.text_field :description %>
       <%= f.label :date %><%= f.date_select :date %>
       <%= f.submit %>
+      <%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
   <% end %>
 <% end %>
