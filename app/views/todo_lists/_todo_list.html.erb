@@ -23,7 +23,7 @@
   </div>
   <div>
     <%= render todo_list.todos %>
-    <%= link_to "add todo", todos_path({ todo: { todo_list_id: todo_list.id }, "commit"=>"Create Todo"}), method: :create %>
+    <%= link_to "add todo", todos_path({ todo: { name: 'New todo', todo_list_id: todo_list.id }, "commit"=>"Create Todo"}), method: :create %>
   </div>
   <br/>
 <% end %>
