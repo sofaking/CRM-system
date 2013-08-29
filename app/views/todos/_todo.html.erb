@@ -13,7 +13,7 @@
     <% end %>
 
     <div class="field">
-      <%= f.check_box :done %>
+      <%= f.check_box :done, onclick: "submit()" %>
       <%= f.text_field :name %>
       <%= f.date_select :date %>
       <%= f.submit %>
