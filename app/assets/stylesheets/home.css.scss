@@ -3,13 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 input[type="text"] {
-  border: 0;
-  border-bottom: 1px dotted #444;
-  background: #ffe;
-  width: 240px;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px dotted #aaa;
+  min-width: 240px;
 }
 
 input[type="submit"] {
   position: absolute;
   visibility: hidden;
+}
+
+#todo_list_name {
+  font-size: 20px;
 }
