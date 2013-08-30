@@ -24,7 +24,7 @@
   </div>
   <div class="todos">
     <%= render todo_list.todos %>
-    <%= link_to "add todo", todos_path({todo: {name: 'New todo', todo_list_id: todo_list.id}, commit: 'Create todo'}), method: :post, remote: true %>
+    <%= link_to "add todo", todos_path(todo: {name: 'New todo', todo_list_id: todo_list.id}, commit: 'Create todo'), method: :post, remote: true %>
   </div>
   <br/>
 <% end %>
