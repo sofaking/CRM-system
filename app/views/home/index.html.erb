@@ -13,4 +13,4 @@
   <%= render @todo_lists %>
 </div>
 
-<%= link_to "add todo list", todo_lists_path({ todo_list: { name: "New todo list" }, "commit"=>"Create Todo List"}), method: :create %>
+<%= link_to "add todo list", todo_lists_path({todo_list: {name: 'New todo list'}, commit: 'Create todo list'}), method: :post, remote: true %>
