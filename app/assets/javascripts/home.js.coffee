@@ -4,9 +4,6 @@
 
 $ ->
   $('input[type=checkbox]').click ->
-    $('label#' + this.value).attr('style',
-      if this.checked
-        'color:red'
-      else
-        ''
-    )
+    this.form.submit.click()
+  $('.form_todo').onsubmit ->
+    this.form.submit.click()
