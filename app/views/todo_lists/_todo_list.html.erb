@@ -14,16 +14,14 @@
       <% end %>
 
       <div class="field">
-        <%= f.text_field :name %><br/>
+        <%= f.text_field :name %>
+        <br/>
         <%= f.text_field :description %><br/>
         <%= f.submit %>
       </div>
-      <div class="destroy">
-        <%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </div>
     <% end %>
   </div>
-  <div>
+  <div class="todos">
     <%= render todo_list.todos %>
     <%= link_to "add todo", todos_path({ todo: { name: 'New todo', todo_list_id: todo_list.id }, "commit"=>"Create Todo"}), method: :create %>
   </div>
