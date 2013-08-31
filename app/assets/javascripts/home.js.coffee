@@ -5,5 +5,3 @@
 $ ->
   $('input[type=checkbox]').click ->
     this.form.submit.click()
-  $('.form_todo').onsubmit ->
-    this.form.submit.click()
