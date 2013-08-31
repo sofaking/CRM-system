@@ -1,0 +1,1 @@
+$(".todos#todo_list_<%= @todo_list.id %>").html("<%= escape_javascript render(@todo_list.todos) %><%= escape_javascript link_to('add todo', todos_path(todo: {name: 'New todo', todo_list_id: @todo_list.id}, commit: 'Create todo'), method: :post, remote: true) %>");
