@@ -30,6 +30,7 @@ class TodosController < ApplicationController
     respond_to do |format|
       if @todo.save
         format.html { redirect_to home_url, notice: 'Todo was successfully created.' }
+        format.js { @todo_list = TodoList.find(todo_params[:todo_list_id]) }
         format.json { render action: 'show', status: :created, location: @todo }
       else
         format.html { render action: 'new' }
@@ -44,6 +45,7 @@ class TodosController < ApplicationController
     respond_to do |format|
       if @todo.update(todo_params)
         format.html { redirect_to home_url, notice: 'Todo was successfully updated.' }
+        format.js
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
