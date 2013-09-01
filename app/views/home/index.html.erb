@@ -7,10 +7,10 @@
   <% end %>
 </div>
 
-<h1>To-do lists</h1>
+<h1>Project</h1>
 
-<ul class="todo_lists">
-  <li><%= render @todo_lists %></li>
+<ul class="projects">
+  <li><%= render @projects %></li>
 </ul>
 
-<%= link_to "add todo list", todo_lists_path(todo_list: {name: 'New todo list'}, commit: 'Create todo list'), method: :post, remote: true %>
+<%= link_to "add project", projects_path(project: {name: 'New todo list'}, commit: 'Create project'), method: :post, remote: true %>
