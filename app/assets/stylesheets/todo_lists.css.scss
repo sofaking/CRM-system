@@ -5,27 +5,6 @@
 .todo_lists {
   list-style: none;
   padding-left: 20px;
-  
-  input[type="text"] {
-    background: transparent;
-    border: none;
-    outline: none;
-    border-bottom: 1px dotted #aaa;
-    min-width: 240px;
-  }
-
-  input[type="submit"] {
-    position: absolute;
-    visibility: hidden;
-  }
-  
-  #destroy {
-    display: none;
-  }
-  
-  .field:hover #destroy {
-    display: inline;
-  }
 
   #todo_list_name {
     font-size: 20px;

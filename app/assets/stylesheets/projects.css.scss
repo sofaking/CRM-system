@@ -1,3 +1,33 @@
 // Place all the styles related to the Projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.projects {
+  list-style: none;
+  padding-left: 20px;
+  
+  input[type="text"] {
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px dotted #aaa;
+    min-width: 240px;
+  }
+
+  input[type="submit"] {
+    position: absolute;
+    visibility: hidden;
+  }
+  
+  #destroy {
+    display: none;
+  }
+  
+  .field:hover #destroy {
+    display: inline;
+  }
+
+  #project_name {
+    font-size: 30px;
+  }
+}
