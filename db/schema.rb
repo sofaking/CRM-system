@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20130901212308) do
   end
 
   create_table "todo_lists", force: true do |t|
+    t.integer  "project_id"
     t.string   "name"
     t.string   "description"
     t.datetime "created_at"
