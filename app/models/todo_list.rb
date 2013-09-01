@@ -1,4 +1,4 @@
 class TodoList < ActiveRecord::Base
+  belongs_to :project, touch: true
   has_many :todos, dependent: :delete_all
-  accepts_nested_attributes_for :todos
 end

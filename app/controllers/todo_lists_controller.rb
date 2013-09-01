@@ -31,7 +31,7 @@ class TodoListsController < ApplicationController
     respond_to do |format|
       if @todo_list.save
         format.html { redirect_to home_url, notice: 'Todo list was successfully created.' }
-        format.js { @todo_lists = TodoList.all }
+        format.js { @todo_lists = project.todo_lists }
         format.json { render action: 'show', status: :created, location: @todo_list }
       else
         format.html { render action: 'new' }
@@ -46,6 +46,7 @@ class TodoListsController < ApplicationController
     respond_to do |format|
       if @todo_list.update(todo_list_params)
         format.html { redirect_to home_url, notice: 'Todo list was successfully updated.' }
+        format.js { @project = @todo_list.project }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -60,7 +61,7 @@ class TodoListsController < ApplicationController
     @todo_list.destroy
     respond_to do |format|
       format.html { redirect_to home_url }
-      format.js { @todo_lists = TodoList.all }
+      format.js { @todo_lists = project.todo_lists }
       format.json { head :no_content }
     end
   end
