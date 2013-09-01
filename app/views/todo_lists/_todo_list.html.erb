@@ -24,10 +24,10 @@
   </div>
   <ul class="todos" id=<%= "todo_list_#{todo_list.id}" %>>
     <% @todo_list = todo_list %>
-    <%= render @todo_list.todos %>
-    <%= link_to "add todo", todos_path(todo: {name: 'New todo', todo_list_id: todo_list.id}, commit: 'Create todo'), method: :post, remote: true %>
     <li>
+      <%= render @todo_list.todos %>
     </li>
   </ul>
+  <%= link_to "add todo", todos_path(todo: {name: 'New todo', todo_list_id: @todo_list.id}, commit: 'Create todo'), method: :post, remote: true %>
   <br/>
 <% end %>
