@@ -74,6 +74,6 @@ class TodoListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def todo_list_params
-      params.require(:todo_list).permit(:name, :description, :todo_ids => [])
+      params.require(:todo_list).permit(:project_id, :name, :description, :todo_ids => [])
     end
 end
