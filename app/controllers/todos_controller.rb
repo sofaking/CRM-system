@@ -60,7 +60,7 @@ class TodosController < ApplicationController
     @todo.destroy
     respond_to do |format|
       format.html { redirect_to home_url }
-      format.js { @todo_list = TodoList.find(@todo.todo_list_id) }
+      format.js { @todo_list = @todo.todo_list }
       format.json { head :no_content }
     end
   end
