@@ -24,10 +24,10 @@
   </div>
   <h1>To-do lists</h1>
   <br/>
-  <ul class="projects">
+  <ul class="todo_lists" id=<%= "project_#{project.id}" %> >
     <% @project = project %>
     <li><%= render @project.todo_lists %></li>
   </ul>
-  <%= link_to "add todo list", todo_lists_path(todo_list: {name: 'New todo list'}, commit: 'Create todo list'), method: :post, remote: true %>
+  <%= link_to "add todo list", todo_lists_path(todo_list: {name: 'New todo list', project_id: @project.id}, commit: 'Create todo list'), method: :post, remote: true %>
 <% end %>
 
