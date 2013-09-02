@@ -5,7 +5,7 @@ class TodoListsController < ApplicationController
   # GET /todo_lists
   # GET /todo_lists.json
   def index
-    @todo_lists = TodoList.all
+    @todo_lists = @project.todo_lists
   end
 
   # GET /todo_lists/1
@@ -16,7 +16,7 @@ class TodoListsController < ApplicationController
   # GET /todo_lists/new
   def new
     @todo_list = TodoList.new
-    @todos = Todo.all
+    @todos = @todo_list.todos
   end
 
   # GET /todo_lists/1/edit
