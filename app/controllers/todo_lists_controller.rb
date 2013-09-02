@@ -31,7 +31,7 @@ class TodoListsController < ApplicationController
     respond_to do |format|
       if @todo_list.save
         format.html { redirect_to home_url, notice: 'Todo list was successfully created.' }
-        format.js { @todo_lists = project.todo_lists }
+        format.js { @project = @todo_lists.project }
         format.json { render action: 'show', status: :created, location: @todo_list }
       else
         format.html { render action: 'new' }
