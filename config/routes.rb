@@ -1,5 +1,7 @@
 TestForCalendar::Application.routes.draw do
 
+  resources :accounts
+
   resources :projects
 
   resources :todos
