@@ -30,8 +30,8 @@ $(document).ready(function() {
             }
         },
         
-        dayClick: function() {
-            alert('a day has been clicked!');
-        }
+        dayClick: function(date, allDay, jsEvent, view) {
+			window.open('events/new?date=' + date ,'_self');
+		}
     });
 });
