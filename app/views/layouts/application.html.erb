@@ -6,7 +6,7 @@
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
-  <body id="<%= controller.controller_name %>">
+  <body id="<%= controller.controller_name %>_page">
     <div id="banner">
       <% image_tag("logo.png") %>
       <%= @page_title || t('.title') %>
