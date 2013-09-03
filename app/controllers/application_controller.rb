@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include ApplicationHelper
+
   #before_action :authorize
   
   # Prevent CSRF attacks by raising an exception.
