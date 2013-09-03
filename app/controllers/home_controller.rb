@@ -2,6 +2,10 @@ class HomeController < ApplicationController
   skip_before_action :authorize
   
   def index
-    @projects = Project.all
+    if current_user
+      @projects = current_user.account.projects
+    else
+      @projects = Project.first
+    end
   end
 end
