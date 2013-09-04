@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @projects = @account.projects
   end
 
   # GET /projects/1
@@ -29,7 +29,7 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       if @project.save
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
-        format.js { @projects = Project.all }
+        format.js { @projects = @account.projects }
         format.json { render action: 'show', status: :created, location: @project }
       else
         format.html { render action: 'new' }
@@ -44,7 +44,7 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       if @project.update(project_params)
         format.html { redirect_to @project, notice: 'Project was successfully updated.' }
-        format.js { @projects = Project.all }
+        format.js { @projects = @account.projects }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -59,7 +59,7 @@ class ProjectsController < ApplicationController
     @project.destroy
     respond_to do |format|
       format.html { redirect_to projects_url }
-      format.js { @projects = Project.all }
+      format.js { @projects = @account.projects }
       format.json { head :no_content }
     end
   end
@@ -72,6 +72,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name, :description, :todo_list_ids => [])
+      params.require(:project).permit(:account_id, :name, :description, :todo_list_ids => [])
     end
 end
