@@ -1,19 +1,14 @@
 TestForCalendar::Application.routes.draw do
 
   resources :accounts
-
   resources :projects
-
   resources :todos
-
   resources :todo_lists
-
   resources :events
+  resources :users
 
   root 'home#index', as: 'home'
-  
-  resources :users
-  
+
   get 'admin' => 'admin#index'
   
   controller :sessions do
