@@ -1,4 +1,17 @@
-<p id="notice"><%= notice %></p>
+<div>Home</div>
+<div>
+  <% if session[:user_id] %>
+    <%= "User is #{User.find(session[:user_id]).email}" %>
+  <% else %>
+    <%= "No user" %>
+  <% end %>
+</div>
 
-<%= link_to 'Edit', edit_account_path(@account) %> |
-<%= link_to 'Back', accounts_path %>
+<h1>Project</h1>
+
+<ul class="projects">
+  <li><%= render @account.projects %></li>
+</ul>
+
+<%= link_to "add project", projects_path(project: {name: 'New project', account_id: @account.id}, commit: 'Create project'), method: :post, remote: true %>
+
