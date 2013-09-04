@@ -1,16 +1,38 @@
-<div>Home</div>
-<div>
-  <% if session[:user_id] %>
-    <%= "User is #{User.find(session[:user_id]).email}" %>
-  <% else %>
-    <%= "No user" %>
-  <% end %>
-</div>
-
-<h1>Project</h1>
-
-<ul class="projects">
-  <li><%= render @projects %></li>
-</ul>
-
-<%= link_to "add project", projects_path(project: {name: 'New project'}, commit: 'Create project'), method: :post, remote: true %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test calendar interface</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body id="<%= controller.controller_name %>">
+    <div id="banner">
+      <% image_tag("logo.png") %>
+      <%= @page_title || t('.title') %>
+      <div id="login">
+        <% if session[:user_id] %>
+          <%= "Hello #{User.find(session[:user_id]).email}" %>
+          <%= link_to t('logout'), logout_url, method: :delete %>
+        <% else %>
+          <%= link_to t('login'), login_path %>
+        <% end %>
+      </div>
+    </div>
+    <div id="columns">
+      <div id="side">
+      </div>
+      <div id="main"> 
+        <% if notice %>
+          <p id="notice"><%= notice %></p>
+        <% end %>
+        <div id='form_user'>
+          <%= render 'users/form' %>
+        </div>    
+      </div>
+      <div id="footer">
+        <%= t '.сopyright' %>
+      </div>
+    </div>
+  </body>
+</html>
