@@ -8,6 +8,8 @@ $(document).on('ready page:load', function() {
 
     $('#calendar').fullCalendar({
         // put your options and callbacks here
+		
+		weekMode: 'liquid',
 
 		eventSources: [{
           	url: '/events',
@@ -15,7 +17,7 @@ $(document).on('ready page:load', function() {
             textColor: 'black',
             ignoreTimezone: false
         }],
-
+		
         eventClick: function(event) {
             if (event.url) {
                 window.open(event.url);
