@@ -3,9 +3,10 @@ class HomeController < ApplicationController
   
   def index
     if current_user
-      @projects = current_user.account.projects
+      redirect_to current_user.account
     else
-      @projects = Project.first
+      @user = User.new
+      render layout: false
     end
   end
 end
