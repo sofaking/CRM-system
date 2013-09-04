@@ -10,6 +10,7 @@ $(document).on('ready page:load', function() {
         // put your options and callbacks here
 		
 		weekMode: 'liquid',
+		firstDay: 1,
 
 		eventSources: [{
           	url: '/events',
