@@ -8,8 +8,6 @@ TestForCalendar::Application.routes.draw do
 
   resources :todo_lists
 
-  resources :events
-
   root 'home#index', as: 'home'
   
   resources :users
