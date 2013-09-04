@@ -2,13 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-  margin: 0px;
+#home {
+  margin: 0;
+  padding: 0px 10%;
   #banner {
-    height: 36px;
+    height: 50px;
     background: #399;
-    padding: 10px 0px 0px 25px;
-    margin: 0px;
+    padding: 0px 25px;
+    margin: 0;
     font: small-caps 38px/38px "Times New Roman", serif;
     color: white;
     text-align: left-bottom;
@@ -17,43 +18,21 @@ body {
       float: right;
       margin-right: 10px;
       margin-top: 10px;
+      padding: 10px;
       font: 18px/18px "Arial";
       color: black;
+      background: #3c3;
       text-align: top-right;
       a { text-decoration: none; }
     }
   }
 
   #columns {
-    #side {
-      padding: 0;
-      width: 100%;
-      background: #000;
-      ul {
-        padding: 1px 25px;
-        margin: 0;
-        li {
-          align: center;
-          display: inline;
-          list-style: none;
-          color: #000;
-          background: #ffe;
-          font: small-caps 22px/22px "Times New Roman", serif;
-          a {
-            color: #fff;
-            padding: 0px 25px;
-            background: #000;
-            text-decoration: none;
-            &:hover { color: #000; background: #0c9; }
-          }
-        }
-      }
-    }
-  
     #main {
       margin: 0px 10%;
       padding: 1em;
       background: #ffe;
+      text-align: center;
     }
   }
   #footer {
