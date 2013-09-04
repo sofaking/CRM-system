@@ -8,16 +8,18 @@ $(document).on('ready page:load', function() {
 
     $('#calendar').fullCalendar({
         // put your options and callbacks here
-		
+
 		weekMode: 'liquid',
 		firstDay: 1,
 
 		eventSources: [{
           	url: '/events',
-            color: 'yellow',
+            color: 'green',
             textColor: 'black',
             ignoreTimezone: false
         }],
+
+		timeFormat: 'HH:mm{ - HH:mm} ',
 		
         eventClick: function(event) {
             if (event.url) {
