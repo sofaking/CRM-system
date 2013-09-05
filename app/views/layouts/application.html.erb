@@ -20,7 +20,11 @@
       </div>
     </div>
     <div id="columns">
-      <div id="side"><ul></ul></div>
+      <div id="side">
+        <ul>
+          <li><%= link_to_unless_current t('.projects'), current_user.account %></li>
+        </ul>
+      </div>
       <div id="main"> 
         <% if notice %>
           <p id="notice"><%= notice %></p>
