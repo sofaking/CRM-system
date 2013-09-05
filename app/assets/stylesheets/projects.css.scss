@@ -48,7 +48,7 @@ input[type="text"] {
   border-bottom: 1px solid transparent;
   min-width: 240px;
   &:hover { border-bottom: 1px dotted #777; }
-  &:focus + #edit {
+  &:focus + #edit, & + #edit:hover {
     position: relative;
     visibility: visible;
   }
