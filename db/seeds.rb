@@ -12,3 +12,31 @@ User.create(
 )
 puts "Default users:"
 puts User.all.map(&:email)
+
+Todo.delete_all
+Todo.create(
+  { name: 'New todo', description: 'Todo description' }
+)
+puts "Default todo:"
+puts Todo.all.map(&:name)
+
+TodoList.delete_all
+TodoList.create(
+  { name: 'New todo list', description: 'Todo list description', todo_ids: Todo.last.id }
+)
+puts "Default todo_list:"
+puts TodoList.all.map(&:name)
+
+Project.delete_all
+Project.create(
+  { name: 'New project', description: 'Project description', todo_list_ids: TodoList.last.id }
+)
+puts "Default project:"
+puts Project.all.map(&:name)
+
+Account.delete_all
+Account.create(
+  { user_id: User.last.id, project__ids: Project.last.id }
+)
+puts "Default account:"
+puts Account.all.map(&:user_id)
