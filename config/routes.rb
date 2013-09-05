@@ -1,29 +1,25 @@
 TestForCalendar::Application.routes.draw do
+  resources :users
 
-  resources :discussions
-
-  resources :accounts
-
-  resources :projects
-
-  resources :todos
-
-  resources :todo_lists
-
-  resources :events
+  resources :accounts do
+    resources :projects do
+      resources :todo_lists do
+        resources :todos
+      end
+    end
+    resources :events
+  end
 
   root 'home#index', as: 'home'
-  
-  resources :users
-  
+
   get 'admin' => 'admin#index'
-  
+
   controller :sessions do
     get 'login' => :new
     post 'login' => :create
     delete 'logout' => :destroy
   end
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

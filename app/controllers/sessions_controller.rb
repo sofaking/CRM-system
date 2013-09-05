@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   
   # GET /login
   def new
+    render layout: false
   end
 
   # POST /login
@@ -10,7 +11,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user and user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to home_url
+      redirect_to user.account
     else
       redirect_to login_url, alert: "Invalid user/password combination"
     end

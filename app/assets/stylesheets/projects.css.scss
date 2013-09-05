@@ -2,32 +2,85 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.project {
+  text-decoration: none;
+  border: 1px solid grey;
+  box-shadow: 3px 3px 3px grey;
+  border-radius: 5px;
+  background: white;
+  color: black;
+  #project_name {
+    font-size: 50px;
+    color: black;
+  }
+  #project_description {
+    font-size: 14px;
+    color: black;
+  }
+  width: 300px;
+  height: 200px;
+  float: left;
+  padding: 20px 20px;
+  margin: 5px;
+  &:hover {
+    background: #eee;
+  }
+  #people {
+    padding-top: 30px; 
+    font-size: 14px;
+    color: grey;
+    &:hover {
+      text-decoration: underline;
+      color: black;
+    }
+  }
+}
+
+input[type="text"] {
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px dotted #aaa;
+  min-width: 240px;
+}
+
+input[type="submit"] {
+  position: absolute;
+  visibility: hidden;
+}
+
+#destroy {
+  display: none;
+}
+
+.field:hover #destroy {
+  display: inline;
+}
+
 .projects {
   list-style: none;
   padding-left: 20px;
-  
-  input[type="text"] {
-    background: transparent;
-    border: none;
-    outline: none;
-    border-bottom: 1px dotted #aaa;
-    min-width: 240px;
-  }
-
-  input[type="submit"] {
-    position: absolute;
-    visibility: hidden;
-  }
-  
-  #destroy {
-    display: none;
-  }
-  
-  .field:hover #destroy {
-    display: inline;
-  }
 
   #project_name {
     font-size: 30px;
+  }
+}
+
+.form_project {
+  border: 1px solid grey;
+  box-shadow: 3px 3px 3px grey;
+  border-radius: 3px;
+  background: white;
+  padding: 30px;
+  #project_name {
+    font-size: 30px;
+    width: 60%;
+  }
+  #project_description {
+    font-size: 20px;
+    width: 60%;
+  }
+  #todo_label {
+    font-size: 20px;
   }
 }

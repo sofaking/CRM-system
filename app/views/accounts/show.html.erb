@@ -1,4 +1,7 @@
-<p id="notice"><%= notice %></p>
+<div id='project_list'>
+  <div class='projects'>
+    <%= render @account.projects %>
+  </div>
 
-<%= link_to 'Edit', edit_account_path(@account) %> |
-<%= link_to 'Back', accounts_path %>
+  <%= link_to "+", account_projects_path(project: {name: 'New project', account_id: @account.id}, commit: 'Create project', account_id: @account.id), id: :add_project, method: :create %>
+</div>
