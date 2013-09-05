@@ -6,6 +6,7 @@ gem 'rails_12factor', group: :production
 
 # for calendar
 gem 'fullcalendar-rails'
+gem 'jquery-ui-rails'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
