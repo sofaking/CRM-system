@@ -36,17 +36,22 @@
   }
 }
 
+#edit {
+  position: absolute;
+  visibility: hidden;
+}
+
 input[type="text"] {
   background: transparent;
   border: none;
   outline: none;
-  border-bottom: 1px dotted #aaa;
+  border-bottom: 1px solid transparent;
   min-width: 240px;
-}
-
-input[type="submit"] {
-  position: absolute;
-  visibility: hidden;
+  &:hover { border-bottom: 1px dotted #777; }
+  &:focus + #edit {
+    position: relative;
+    visibility: visible;
+  }
 }
 
 #destroy {

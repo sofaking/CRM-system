@@ -14,10 +14,11 @@
 
     <div class="field">
       <%= f.text_field :name %>
+      <span id='edit'><%= f.submit value: ' Save ' %> or <%= link_to 'Cancel' %></span>
       <%= link_to 'Destroy', account_project_path(@project.account, @project), method: :delete, data: { confirm: 'Are you sure?' }, id: 'destroy' %>
       <br/>
-      <%= f.text_field :description %><br/>
-      <%= f.submit %>
+      <%= f.text_field :description %>
+      <span id='edit'><%= f.submit value: ' Save ' %> or <%= link_to 'Cancel' %></span>
     </div>
   <% end %>
   <div id='project_menu'>
