@@ -36,7 +36,7 @@ puts Project.all.map(&:name)
 
 Account.delete_all
 Account.create(
-  { user_id: User.last.id, project__ids: Project.last.id }
+  { user_id: User.last.id, project_ids: Project.last.id }
 )
 puts "Default account:"
 puts Account.all.map(&:user_id)
