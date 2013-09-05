@@ -56,9 +56,10 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
+    account = @project.account
     @project.destroy
     respond_to do |format|
-      format.html { redirect_to projects_url }
+      format.html { redirect_to account }
       format.js { @projects = @account.projects }
       format.json { head :no_content }
     end
