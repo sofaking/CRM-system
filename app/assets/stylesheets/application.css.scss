@@ -12,6 +12,7 @@
  *= require_tree .
  */
 
+html { background-image: url('handmadepaper_@2X.png') #ccc; }
 body {
   margin: 0px;
   #banner {
@@ -35,7 +36,6 @@ body {
   }
 
   #columns {
-    background: #f5efe6;
     #side {
       padding: 0;
       width: 100%;
