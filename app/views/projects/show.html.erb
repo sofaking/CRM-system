@@ -1,14 +1,32 @@
-<p id="notice"><%= notice %></p>
+<div class="form_project">
+  <%= form_for @project, url: account_project_path(@project.account, @project), remote: true do |f| %>
+    <% if @project.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
+        <ul>
+        <% @project.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+    <div class="field">
+      <%= f.text_field :name %>
+      <%= link_to 'Destroy', account_project_path(@project.account, @project), method: :delete, data: { confirm: 'Are you sure?' }, id: 'destroy' %>
+      <br/>
+      <%= f.text_field :description %><br/>
+      <%= f.submit %>
+    </div>
+  <% end %>
+  <div id='project_menu'>
+    <%= link_to "#{@project.todo_lists.count} Todo lists", account_project_todo_lists_path(@project.account, @project) %>
+  <div>
+  <h1 id='todo_label'>To-do lists</h1>
+  <br/>
+  <ul class="todo_lists" id=<%= "project_#{@project.id}" %> >
+    <li><%= render @project.todo_lists %></li>
+  </ul>
+  <%= link_to "add todo list", account_project_todo_lists_path(todo_list: {name: 'New todo list', project_id: @project.id}, commit: 'Create todo list', account_id: @project.account.id, project_id: @project.id), method: :post, remote: true %>
+</div>
