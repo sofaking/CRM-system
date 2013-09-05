@@ -22,7 +22,7 @@
   <% end %>
   <div id='project_menu'>
     <%= link_to "#{@project.todo_lists.count} Todo lists", account_project_todo_lists_path(@project.account, @project) %>
-  <div>
+  </div>
   <h1 id='todo_label'>To-do lists</h1>
   <br/>
   <ul class="todo_lists" id=<%= "project_#{@project.id}" %> >
