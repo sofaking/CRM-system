@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   
   # GET /login
   def new
+    render layout: false
   end
 
   # POST /login
