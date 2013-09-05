@@ -1,17 +1,7 @@
-<div>Home</div>
-<div>
-  <% if session[:user_id] %>
-    <%= "User is #{User.find(session[:user_id]).email}" %>
-  <% else %>
-    <%= "No user" %>
-  <% end %>
+<div id='project_list'>
+  <div class='projects'>
+    <%= render @account.projects %>
+  </div>
+
+  <%= link_to "+", account_project_path(project: {name: 'New project', account_id: @account.id}, commit: 'Create project', account_id: @account.id), id: :add_project, method: :create %>
 </div>
-
-<h1>Project</h1>
-
-<ul class="projects">
-  <li><%= render @account.projects %></li>
-</ul>
-
-<%= link_to "add project", projects_path(project: {name: 'New project', account_id: @account.id}, commit: 'Create project'), method: :post, remote: true %>
-
