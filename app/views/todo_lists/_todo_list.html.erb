@@ -1,6 +1,6 @@
 <% cache todo_list do %>
   <div class="form_todo_list">
-    <%= form_for todo_list, remote: true do |f| %>
+    <%= form_for todo_list, url: account_project_todo_list_path(todo_list.project.account, todo_list.project, todo_list), remote: true do |f| %>
       <% if todo_list.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(todo_list.errors.count, "error") %> prohibited this todo_list from being saved:</h2>
@@ -15,7 +15,7 @@
 
       <div class="field">
         <%= f.text_field :name %>
-        <%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' }, remote: true, id: 'destroy' %>
+        <%= link_to 'Destroy', account_project_todo_list_path(todo_list.project.account, todo_list.project, todo_list), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, id: 'destroy' %>
         <br/>
         <%= f.text_field :description %><br/>
         <%= f.submit %>
@@ -28,6 +28,6 @@
       <%= render @todo_list.todos %>
     </li>
   </ul>
-  <%= link_to "add todo", todos_path(todo: {name: 'New todo', todo_list_id: @todo_list.id}, commit: 'Create todo'), method: :post, remote: true %>
+  <%= link_to "add todo", account_project_todo_list_todo_path(todo: {name: 'New todo', todo_list_id: @todo_list.id}, commit: 'Create todo', account_id: todo_list.project.account.id, project_id: todo_list.project.id, todo_list_id: todo_list.id), method: :post, remote: true %>
   <br/>
 <% end %>
