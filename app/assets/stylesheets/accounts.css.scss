@@ -1,3 +1,27 @@
 // Place all the styles related to the Accounts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.prject_list {
+  width: 100%;
+}
+
+#add_project {
+  text-decoration: none;
+  border: 1px solid grey;
+  background: white;
+  width: 300px;
+  height: 40px;
+  float: left;
+  padding: 100px 20px;
+  font-size: 100px;
+  color: #aaa;
+  text-align: center;
+  margin: 5px;
+  box-shadow: 3px 3px 3px grey;
+  border-radius: 5px;
+  &:hover {
+    background: #6cf;
+    color: white;
+  }
+}
