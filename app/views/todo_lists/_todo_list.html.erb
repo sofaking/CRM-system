@@ -15,11 +15,11 @@
 
       <div class="field">
         <%= f.text_field :name %>
-        <span id='edit'><%= f.submit value: ' Save ' %> or <%= link_to 'Cancel' %></span>
+        <span id='edit'><%= f.submit value: ' Save ' %> or <%= link_to 'Cancel', '' %></span>
         <%= link_to 'Destroy', account_project_todo_list_path(todo_list.project.account, todo_list.project, todo_list), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, id: 'destroy' %>
         <br/>
         <%= f.text_field :description %>
-        <span id='edit'><%= f.submit value: ' Save ' %> or <%= link_to 'Cancel' %></span>
+        <span id='edit'><%= f.submit value: ' Save ' %> or <%= link_to 'Cancel', '' %></span>
       </div>
     <% end %>
   </div>
