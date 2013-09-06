@@ -24,10 +24,18 @@
     <%= link_to "#{@project.todo_lists.count} Todo lists", account_project_todo_lists_path(@project.account, @project) %>
     <%= link_to "#{@project.discussions.count} Discussions", account_project_discussions_path(@project.account, @project) %>
   <div>
+  <div>
   <h1 id='todo_label'>To-do lists</h1>
   <br/>
   <ul class="todo_lists" id=<%= "project_#{@project.id}" %> >
     <li><%= render @project.todo_lists %></li>
   </ul>
   <%= link_to "add todo list", account_project_todo_lists_path(todo_list: {name: 'New todo list', project_id: @project.id}, commit: 'Create todo list', account_id: @project.account.id, project_id: @project.id), method: :post, remote: true %>
+  </div>
+  <div>
+  <h1 id='discussion_label'>Discussions</h1>
+  <ul class="discussions" id=<%= "project_#{@project.id}" %> >
+    <li><%= render @project.discussions %></li>
+  </ul>
+  <%= link_to "add discussion", account_project_discussions_path(discussion: {tittle: 'New discussion', project_id: @project.id}, commit: 'Create discussion', account_id: @project.account.id, project_id: @project.id), method: :post, remote: true %>
 </div>
