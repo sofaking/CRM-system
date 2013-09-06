@@ -25,7 +25,6 @@ class DiscussionsController < ApplicationController
   # POST /discussions.json
   def create
     @discussion = Discussion.new(discussion_params)
-    @discussion.creator = current_user
     
     respond_to do |format|
       if @discussion.save
