@@ -4,7 +4,7 @@
 
 .project {
   text-decoration: none;
-  border: 1px solid grey;
+  border: 1px solid #bbb;
   box-shadow: 3px 3px 3px grey;
   border-radius: 3px;
   background: white;
@@ -72,10 +72,10 @@ input[type="text"] {
 }
 
 .form_project {
-  border: 1px solid #aaa;
+  border: 1px solid #bbb;
   box-shadow: 3px 3px 3px grey;
   border-radius: 3px;
-  background-image: url('snow_@2X.png') #eee;
+  background-image: url('snow_@2X.png');
   padding: 30px;
   #project_name {
     font-size: 30px;

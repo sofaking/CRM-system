@@ -12,8 +12,9 @@
  *= require_tree .
  */
 
-html { background-image: url('handmadepaper_@2X.png') #ccc; }
+html { background-image: url('retina_wood.png'); }
 body {
+  background-color: transparent;
   margin: 0px;
   #banner {
     height: 36px;
