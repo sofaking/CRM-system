@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20130905135020) do
   end
 
   create_table "discussions", force: true do |t|
+    t.integer  "user_id"
     t.integer  "project_id"
     t.string   "title"
     t.text     "description"

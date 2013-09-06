@@ -14,7 +14,7 @@
       <% end %>
 
       <div class="field">
-        <%= f.label :creator %><br/>
+        <%= f.label discussion.creator.email %><br/>
         <%= f.text_field :title %><br/>
         <%= f.text_area :description %>
         <%= f.submit id: :submit %>

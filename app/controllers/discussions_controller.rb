@@ -70,6 +70,6 @@ class DiscussionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def discussion_params
-      params.require(:discussion).permit(:project_id, :title, :description)
+      params.require(:discussion).permit(:user_id, :project_id, :title, :description)
     end
 end
