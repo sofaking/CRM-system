@@ -43,7 +43,7 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       if @project.update(project_params)
         format.html { redirect_to account_project_url(@project.account, @project), notice: 'Project was successfully updated.' }
-        format.js { @projects = @account.projects }
+        format.js
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
