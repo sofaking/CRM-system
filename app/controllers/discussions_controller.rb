@@ -4,7 +4,7 @@ class DiscussionsController < ApplicationController
   # GET /discussions
   # GET /discussions.json
   def index
-    @discussions = Discussion.all
+    @discussions = Project.find(params[:project_id]).discussions
   end
 
   # GET /discussions/1
