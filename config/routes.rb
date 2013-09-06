@@ -1,8 +1,10 @@
 TestForCalendar::Application.routes.draw do
+  
   resources :users
 
   resources :accounts do
     resources :projects do
+      resources :discussions
       resources :todo_lists do
         resources :todos
       end
