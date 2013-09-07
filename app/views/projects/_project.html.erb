@@ -1,5 +1,5 @@
 <% cache project do %>
-  <%= link_to account_project_path(project.account, project), class: :project do %>
+  <%= link_to account_project_path(project.account, project), class: [:project, :paper] do %>
     <label id='project_name'><%= project.name %></label><br/>
     <label id='project_description'><%= project.description %></label>
     <div id='people'>

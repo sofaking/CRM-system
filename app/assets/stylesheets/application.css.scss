@@ -13,6 +13,14 @@
  */
 
 html { background-image: image_url('retina_wood.png'); }
+
+.paper {
+  border: 1px solid #bbb;
+  box-shadow: 3px 3px 3px grey;
+  border-radius: 3px;
+  background-image: image_url('snow_@2X.png');
+}
+
 body {
   background-color: transparent;
   margin: 0px;
