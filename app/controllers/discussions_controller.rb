@@ -44,6 +44,7 @@ class DiscussionsController < ApplicationController
     respond_to do |format|
       if @discussion.update(discussion_params)
         format.html { redirect_to @discussion, notice: 'Discussion was successfully updated.' }
+        format.js { @project = @discussion.project }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
