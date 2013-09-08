@@ -21,6 +21,18 @@ html { background-image: image_url('retina_wood.png'); }
   background-image: image_url('snow_@2X.png');
 }
 
+.path {
+  font-size: 14px;
+  padding-bottom: 10px;
+  & a {
+    color: #009;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
 body {
   background-color: transparent;
   margin: 0px;

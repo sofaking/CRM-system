@@ -1,4 +1,8 @@
 <div class="form_project paper">
+  <div class='path'>
+    <%= link_to 'Projects', current_user.account %> >
+    <%= link_to @project.name, '' %>
+  </div>
   <%= form_for @project, url: account_project_path(@project.account, @project), remote: true do |f| %>
     <% if @project.errors.any? %>
       <div id="error_explanation">

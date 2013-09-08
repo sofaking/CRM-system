@@ -1,4 +1,9 @@
-<div class='paper'>
+<div class='all_todo_lists paper'>
+  <div class='path'>
+    <%= link_to 'Projects', current_user.account %> >
+    <%= link_to @project.name, account_project_path(@project.account, @project) %> >
+    <%= link_to 'To do lists', '' %>
+  </div>
   <h1>Listing todo_lists</h1>
 
   <table>
