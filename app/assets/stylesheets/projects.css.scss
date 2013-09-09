@@ -4,10 +4,6 @@
 
 .project {
   text-decoration: none;
-  border: 1px solid grey;
-  box-shadow: 3px 3px 3px grey;
-  border-radius: 5px;
-  background: white;
   color: black;
   #project_name {
     font-size: 50px;
@@ -36,17 +32,22 @@
   }
 }
 
+#edit {
+  position: absolute;
+  visibility: hidden;
+}
+
 input[type="text"] {
   background: transparent;
   border: none;
   outline: none;
-  border-bottom: 1px dotted #aaa;
+  border-bottom: 1px solid transparent;
   min-width: 240px;
-}
-
-input[type="submit"] {
-  position: absolute;
-  visibility: hidden;
+  &:hover { border-bottom: 1px dotted #777; }
+  &:focus + #edit, & + #edit:hover {
+    position: relative;
+    visibility: visible;
+  }
 }
 
 #destroy {
@@ -67,10 +68,6 @@ input[type="submit"] {
 }
 
 .form_project {
-  border: 1px solid grey;
-  box-shadow: 3px 3px 3px grey;
-  border-radius: 3px;
-  background: white;
   padding: 30px;
   #project_name {
     font-size: 30px;
@@ -79,6 +76,11 @@ input[type="submit"] {
   #project_description {
     font-size: 20px;
     width: 60%;
+  }
+  #project_menu {
+    padding: 3px 10px;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
   }
   #todo_label {
     font-size: 20px;

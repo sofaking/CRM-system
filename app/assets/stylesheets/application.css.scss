@@ -12,7 +12,29 @@
  *= require_tree .
  */
 
+html { background-image: image_url('retina_wood.png'); }
+
+.paper {
+  border: 1px solid #bbb;
+  box-shadow: 3px 3px 3px grey;
+  border-radius: 3px;
+  background-image: image_url('snow_@2X.png');
+}
+
+.path {
+  font-size: 14px;
+  padding-bottom: 10px;
+  & a {
+    color: #009;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
 body {
+  background-color: transparent;
   margin: 0px;
   #banner {
     height: 36px;
@@ -35,7 +57,6 @@ body {
   }
 
   #columns {
-    background: #f5efe6;
     #side {
       padding: 0;
       width: 100%;

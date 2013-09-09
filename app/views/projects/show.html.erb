@@ -1,4 +1,8 @@
-<div class="form_project">
+<div class="form_project paper">
+  <div class='path'>
+    <%= link_to 'Projects', current_user.account %> >
+    <%= link_to @project.name, '' %>
+  </div>
   <%= form_for @project, url: account_project_path(@project.account, @project), remote: true do |f| %>
     <% if @project.errors.any? %>
       <div id="error_explanation">
@@ -14,17 +18,22 @@
 
     <div class="field">
       <%= f.text_field :name %>
+      <span id='edit'><%= f.submit value: ' Save ' %> or <%= link_to 'Cancel', '' %></span>
       <%= link_to 'Destroy', account_project_path(@project.account, @project), method: :delete, data: { confirm: 'Are you sure?' }, id: 'destroy' %>
       <br/>
-      <%= f.text_field :description %><br/>
-      <%= f.submit %>
+      <%= f.text_field :description %>
+      <span id='edit'><%= f.submit value: ' Save ' %> or <%= link_to 'Cancel', '' %></span>
     </div>
   <% end %>
   <div id='project_menu'>
     <%= link_to "#{@project.todo_lists.count} Todo lists", account_project_todo_lists_path(@project.account, @project) %>
+<<<<<<< HEAD
     <%= link_to "#{@project.discussions.count} Discussions", account_project_discussions_path(@project.account, @project) %>
   <div>
   <div>
+=======
+  </div>
+>>>>>>> master
   <h1 id='todo_label'>To-do lists</h1>
   <br/>
   <ul class="todo_lists" id=<%= "project_#{@project.id}" %> >

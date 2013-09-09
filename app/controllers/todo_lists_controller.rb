@@ -5,6 +5,7 @@ class TodoListsController < ApplicationController
   # GET /todo_lists
   # GET /todo_lists.json
   def index
+    @project = Project.find(params[:project_id])
     @todo_lists = @project.todo_lists
   end
 

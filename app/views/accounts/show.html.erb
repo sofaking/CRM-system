@@ -3,5 +3,5 @@
     <%= render @account.projects %>
   </div>
 
-  <%= link_to "+", account_projects_path(project: {name: 'New project', account_id: @account.id}, commit: 'Create project', account_id: @account.id), id: :add_project, method: :create %>
+  <%= link_to "+", account_projects_path(project: {name: 'New project', account_id: @account.id}, commit: 'Create project', account_id: @account.id), id: :add_project, class: :paper, method: :create %>
 </div>

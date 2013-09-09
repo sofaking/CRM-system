@@ -15,10 +15,11 @@
 
       <div class="field">
         <%= f.text_field :name %>
+        <span id='edit'><%= f.submit value: ' Save ' %> or <%= link_to 'Cancel', '' %></span>
         <%= link_to 'Destroy', account_project_todo_list_path(todo_list.project.account, todo_list.project, todo_list), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, id: 'destroy' %>
         <br/>
-        <%= f.text_field :description %><br/>
-        <%= f.submit %>
+        <%= f.text_field :description %>
+        <span id='edit'><%= f.submit value: ' Save ' %> or <%= link_to 'Cancel', '' %></span>
       </div>
     <% end %>
   </div>
@@ -28,6 +29,6 @@
       <%= render @todo_list.todos %>
     </li>
   </ul>
-  <%= link_to "add todo", account_project_todo_list_todo_path(todo: {name: 'New todo', todo_list_id: @todo_list.id}, commit: 'Create todo', account_id: todo_list.project.account.id, project_id: todo_list.project.id, todo_list_id: todo_list.id), method: :post, remote: true %>
+  <%= link_to "add todo", account_project_todo_list_todos_path(todo: {name: 'New todo', todo_list_id: @todo_list.id}, commit: 'Create todo', account_id: todo_list.project.account.id, project_id: todo_list.project.id, todo_list_id: todo_list.id), method: :post, remote: true %>
   <br/>
 <% end %>
