@@ -1,14 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div id='discussion' class='paper'>
+	<div class='path'>
+		<%= link_to 'Projects', current_user.account %> >
+		<%= link_to @discussion.project.name, account_project_path(@discussion.project.account, @discussion.project) %> >
+		<%= link_to @discussion.title, '' %>
+	</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @discussion.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @discussion.description %>
-</p>
-
-<%= link_to 'Edit', edit_discussion_path(@discussion) %> |
-<%= link_to 'Back', discussions_path %>
+	<div >
+			<h3><%= @discussion.title %></h3>
+		<span class='creator_info'>
+			Created at: <%= @discussion.created_at %>, by <%=  @discussion.creator.email %>
+			<br/>
+		</span>
+		<p>
+			<%= @discussion.description %>	
+		</p>
+		<span class='actions'>
+      <%= link_to 'Edit', edit_account_project_discussion_path(@discussion.project.account, @discussion.project, @discussion, disc_id: @discussion.id), method: :get %>
+      <%= link_to 'Destroy', [@discussion.project.account, @discussion.project, @discussion], method: :delete, data: { confirm: 'Are you sure?' } %>
+    </span>
+	</div>
+</div>
