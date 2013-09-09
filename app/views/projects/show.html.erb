@@ -24,6 +24,10 @@
       </span>
       <br/>
       <%= f.text_field :description %>
+      <span id='actions'>
+        <%= f.submit value: ' Save ' %> or <%= link_to 'Cancel', '' %>
+        <%= link_to 'Destroy', account_project_path(@project.account, @project), method: :delete, data: { confirm: 'Are you sure?' }%>
+      </span>
     </div>
   <% end %>
   <div id='project_menu'>
