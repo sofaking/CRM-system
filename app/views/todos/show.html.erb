@@ -1,4 +1,4 @@
-<div class='todo paper'>
+<div id='todo_list' class='paper'>
   <div class='path'>
     <%= link_to 'Projects', current_user.account %> >
     <%= link_to @todo.todo_list.project.name, account_project_path(@todo.todo_list.project.account, @todo.todo_list.project) %> >
