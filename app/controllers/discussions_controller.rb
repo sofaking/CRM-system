@@ -59,7 +59,7 @@ class DiscussionsController < ApplicationController
   def destroy
     @discussion.destroy
     respond_to do |format|
-      format.html { redirect_to discussions_url }
+      format.html { redirect_to account_project_url(@discussion.project.account, @discussion.project) }
       format.json { head :no_content }
     end
   end
