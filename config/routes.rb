@@ -1,5 +1,7 @@
 TestForCalendar::Application.routes.draw do
 
+  root 'home#index', as: 'home'
+  
   resources :users
 
   resources :accounts do
@@ -10,11 +12,9 @@ TestForCalendar::Application.routes.draw do
     end
     resources :events
   end
-
-  root 'home#index', as: 'home'
-
-  get 'admin' => 'admin#index'
-
+  
+  get 'calendar' => 'calendar#index'
+  
   controller :sessions do
     get 'login' => :new
     post 'login' => :create

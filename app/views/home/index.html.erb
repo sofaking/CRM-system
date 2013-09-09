@@ -11,8 +11,8 @@
       <% image_tag("logo.png") %>
       <%= @page_title || t('.title') %>
       <div id="login">
-        <% if session[:user_id] %>
-          <%= "Hello #{User.find(session[:user_id]).email}" %>
+        <% if current_user %>
+          <%= "Hello #{current_user.email}" %>
           <%= link_to t('log_out'), logout_url, method: :delete %>
         <% else %>
           <%= link_to t('log_in'), login_path %>

@@ -6,7 +6,7 @@
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
-  <body id="<%= controller.controller_name %>">
+  <body id="<%= controller.controller_name %>_page">
     <div id="banner">
       <% image_tag("logo.png") %>
       <span id='title'>
@@ -25,6 +25,7 @@
       <div id="side">
         <ul>
           <li><%= link_to_unless_current t('.projects'), current_user.account %></li>
+          <li><%= link_to_unless_current t('.calendar_page'), calendar_path %></li>
         </ul>
       </div>
       <div id="main"> 
