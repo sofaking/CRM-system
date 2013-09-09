@@ -1,11 +1,11 @@
 <% cache todo do %>
-  <div class="form_todo">
+  <div class='form_todo field'>
     <span class='editing_todo_<%= todo.id %>'>
       <%= check_box 'todo', 'done', value: not(todo.done), data: {remote: true, url: account_project_todo_list_todo_path(todo.todo_list.project.account, todo.todo_list.project, todo.todo_list, todo, commit: 'Update todo done'), method: :put} %>
       <%= link_to todo.name, [todo.todo_list.project.account, todo.todo_list.project, todo.todo_list, todo] %>
       <span class='actions'>
         <%= link_to 'Edit', edit_account_project_todo_list_todo_path(todo.todo_list.project.account, todo.todo_list.project, todo.todo_list, todo), method: :get, remote: true %>
-        <%= link_to 'Destroy', [todo.todo_list.project.account, todo.todo_list.project, todo.todo_list, todo], method: :delete, data: { confirm: 'Are you sure?' }, remote: true, id: 'destroy' %>
+        <%= link_to 'Destroy', [todo.todo_list.project.account, todo.todo_list.project, todo.todo_list, todo], method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
       </span>
     </span>
   </div>
