@@ -1,25 +1,12 @@
 <% cache todo do %>
   <div class="form_todo">
-    <%= form_for todo, url: [todo.todo_list.project.account, todo.todo_list.project, todo.todo_list, todo], remote: true do |f| %>
-      <% if todo.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(todo.errors.count, "error") %> prohibited this todo from being saved:</h2>
-
-          <ul>
-          <% todo.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-          </ul>
-        </div>
-      <% end %>
-
-      <div class="field">
-        <%= f.check_box :done, onclick: 'this.form.submit.click()' %>
-        <%= f.text_field :name %>
-        <span id='edit'><%= f.submit value: ' Save ' %> or <%= link_to 'Cancel', '' %></span>
-        <%= link_to 'Destroy', [todo.todo_list.project.account, todo.todo_list.project, todo.todo_list, todo], method: :delete, data: { confirm: 'Are you sure?' }, remote: true, id: 'destroy' %>
-      </div>
-    <% end %>
+    <span class='editing_todo_<%= todo.id %>'>
       <%= check_box 'todo', 'done', value: not(todo.done), data: {remote: true, url: account_project_todo_list_todo_path(todo.todo_list.project.account, todo.todo_list.project, todo.todo_list, todo, commit: 'Update todo done'), method: :put} %>
+      <%= link_to todo.name, [todo.todo_list.project.account, todo.todo_list.project, todo.todo_list, todo] %>
+      <span class='actions'>
+        <%= link_to 'Edit', edit_account_project_todo_list_todo_path(todo.todo_list.project.account, todo.todo_list.project, todo.todo_list, todo), method: :get, remote: true %>
+        <%= link_to 'Destroy', [todo.todo_list.project.account, todo.todo_list.project, todo.todo_list, todo], method: :delete, data: { confirm: 'Are you sure?' }, remote: true, id: 'destroy' %>
+      </span>
+    </span>
   </div>
 <% end %>
