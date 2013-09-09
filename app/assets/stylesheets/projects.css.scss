@@ -48,16 +48,27 @@
 }
 
 .actions {
+  font-size: 12px;
   padding-left: 20px;
   position: absolute;
   visibility: hidden;
-  
 }
 
 .field:hover .actions {
   position: absolute;
   visibility: visible;
-  
+}
+
+#actions {
+  font-size: 12px;
+  padding-left: 20px;
+  position: absolute;
+  visibility: hidden;
+}
+
+input[type="text"]:focus + #actions {
+  position: absolute;
+  visibility: visible;
 }
 
 input[type="text"] {

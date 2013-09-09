@@ -18,11 +18,12 @@
 
     <div class="field">
       <%= f.text_field :name %>
-      <span id='edit'><%= f.submit value: ' Save ' %> or <%= link_to 'Cancel', '' %></span>
-      <%= link_to 'Destroy', account_project_path(@project.account, @project), method: :delete, data: { confirm: 'Are you sure?' }, id: 'destroy' %>
+      <span id='actions'>
+        <%= f.submit value: ' Save ' %> or <%= link_to 'Cancel', '' %>
+        <%= link_to 'Destroy', account_project_path(@project.account, @project), method: :delete, data: { confirm: 'Are you sure?' }%>
+      </span>
       <br/>
       <%= f.text_field :description %>
-      <span id='edit'><%= f.submit value: ' Save ' %> or <%= link_to 'Cancel', '' %></span>
     </div>
   <% end %>
   <div id='project_menu'>
@@ -31,7 +32,7 @@
   <h1 id='todo_label'>To-do lists</h1>
   <br/>
   <ul class="todo_lists" id=<%= "project_#{@project.id}" %> >
-    <li><%= render @project.todo_lists %></li>
+    <%= render @project.todo_lists %>
   </ul>
   <%= link_to "add todo list", account_project_todo_lists_path(todo_list: {name: 'New todo list', project_id: @project.id}, commit: 'Create todo list', account_id: @project.account.id, project_id: @project.id), method: :post, remote: true, id: :add_todo_list %>
 </div>
