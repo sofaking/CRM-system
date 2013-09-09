@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Test calendar interface</title>
+    <title>CRM system</title>
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
@@ -9,7 +9,9 @@
   <body id="<%= controller.controller_name %>">
     <div id="banner">
       <% image_tag("logo.png") %>
-      <%= @page_title || t('.title') %>
+      <span id='title'>
+        <%= @page_title || t('.title') %>
+      </span>
       <div id="login">
         <% if session[:user_id] %>
           You may <%= link_to t('sign_out'), logout_url, method: :delete %> here.<br/>
