@@ -19,6 +19,7 @@ class DiscussionsController < ApplicationController
 
   # GET /discussions/1/edit
   def edit
+    @discussion = Discussion.find_by('id', params[:desc_id])
   end
 
   # POST /discussions
@@ -43,7 +44,7 @@ class DiscussionsController < ApplicationController
   def update
     respond_to do |format|
       if @discussion.update(discussion_params)
-        format.html { redirect_to @discussion, notice: 'Discussion was successfully updated.' }
+        format.html { redirect_to account_project_discussion_url(@discussion.project.account, @discussion.project, @discussion), notice: 'Discussion was successfully updated.' }
         format.js { @project = @discussion.project }
         format.json { head :no_content }
       else
