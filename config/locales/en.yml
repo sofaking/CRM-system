@@ -20,4 +20,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  layouts:
+    application:
+      title: Notepad
+      сopyright: © 2013 Petrov Vladislav
+  home:
+    index:
+      title: Notepad
+      сopyright: © 2013 Petrov Vladislav
