@@ -22,9 +22,9 @@
 en:
   layouts:
     application:
-      title: Notepad
+      title: Projectpad
       сopyright: © 2013 Petrov Vladislav
   home:
     index:
-      title: Notepad
+      title: Projectpad
       сopyright: © 2013 Petrov Vladislav
