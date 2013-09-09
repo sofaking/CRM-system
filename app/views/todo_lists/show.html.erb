@@ -4,17 +4,18 @@
     <%= link_to @todo_list.project.name, account_project_path(@todo_list.project.account, @todo_list.project) %> >
     <%= link_to @todo_list.name, '' %>
   </div>
-  <span class='editing_todo_list_<%= @todo_list.id %> field' id='todo_list_header'>
-    <%= link_to @todo_list.name, [@todo_list.project.account, @todo_list.project, @todo_list] %>
-    <span class='actions'>
-      <%= link_to 'Edit', edit_account_project_todo_list_path(@todo_list.project.account, @todo_list.project, @todo_list), method: :get, remote: true %>
-      <%= link_to 'Destroy', [@todo_list.project.account, @todo_list.project, @todo_list], method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
+  <span class='editing_todo_list_<%= @todo_list.id %>' id='todo_list_header'>
+    <span class='field'>
+      <%= link_to @todo_list.name, [@todo_list.project.account, @todo_list.project, @todo_list] %> 
+      <%= @todo_list.description %>
+      <span class='actions'>
+        <%= link_to 'Edit', edit_account_project_todo_list_path(@todo_list.project.account, @todo_list.project, @todo_list), method: :get, remote: true %>
+        <%= link_to 'Destroy', [@todo_list.project.account, @todo_list.project, @todo_list], method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
+      </span>
     </span>
-    <br/>
-    <%= @todo_list.description %>
+    <ul class="todos" id=<%= "todo_list_#{@todo_list.id}" %>>
+      <%= render @todo_list.todos %>
+    </ul>
+    <%= link_to "add todo", account_project_todo_list_todos_path(todo: {name: 'New todo', todo_list_id: @todo_list.id}, commit: 'Create todo', account_id: @todo_list.project.account.id, project_id: @todo_list.project.id, todo_list_id: @todo_list.id), method: :post, remote: true %>
   </span>
-  <ul class="todos" id=<%= "todo_list_#{@todo_list.id}" %>>
-    <%= render @todo_list.todos %>
-  </ul>
-  <%= link_to "add todo", account_project_todo_list_todos_path(todo: {name: 'New todo', todo_list_id: @todo_list.id}, commit: 'Create todo', account_id: @todo_list.project.account.id, project_id: @todo_list.project.id, todo_list_id: @todo_list.id), method: :post, remote: true %>
 </div>
