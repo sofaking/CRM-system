@@ -23,21 +23,20 @@ html { background-image: image_url('retina_wood.png'); }
 
 body {
   background: transparent;
-  margin: 0px;
+  margin: 0;
+  padding: 0 10%;
   #banner {
     height: 36px;
-    background: #09c;
     padding: 10px 0px 0px 25px;
     margin: 0px;
     font: small-caps 38px/38px "Times New Roman", serif;
-    color: white;
     text-align: left-bottom;
     img { float: left; }
     #login {
       float: right;
       margin-right: 10px;
       margin-top: 10px;
-      font: 18px/18px "Arial";
+      font: 15px/15px "Arial";
       color: black;
       text-align: top-right;
       a { text-decoration: none; }
@@ -48,34 +47,36 @@ body {
     #side {
       padding: 0;
       width: 100%;
-      background: #000;
+      text-align: center;
       ul {
-        padding: 1px 25px;
+        padding: 5px 25px;
         margin: 0;
         li {
           align: center;
           display: inline;
           list-style: none;
-          color: #000;
-          background: #ffe;
+          color: #0a0;
           font: small-caps 22px/22px "Times New Roman", serif;
           a {
-            color: #fff;
+            color: #000;
             padding: 0px 25px;
-            background: #000;
             text-decoration: none;
-            &:hover { color: #000; background: #0c9; }
+            &:hover {
+              color: #0a0;
+              text-decoration: underline;
+            }
           }
         }
       }
     }
   
     #main {
-      margin: 0px 15%;
-      padding: 1em;
+      text-align: center;
+      padding: 0 6%;
     }
   }
   #footer {
+    padding-top: 20px; 
     clear: both;
     font: small-caps 16px/16px "Times New Roman", serif;
     color: #aaa;
