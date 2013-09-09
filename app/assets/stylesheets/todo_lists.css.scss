@@ -5,6 +5,12 @@
 .todo_lists {
   list-style: none;
   padding-left: 20px;
+  a {
+    color: #009;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 
   #todo_list_name {
     font-size: 20px;

@@ -17,6 +17,7 @@
 }
 
 .project {
+  text-align: left;
   text-decoration: none;
   color: black;
   #project_name {
@@ -78,6 +79,7 @@ input[type="text"] {
 }
 
 .form_project {
+  text-align: left;
   padding: 30px;
   #project_name {
     font-size: 30px;
@@ -91,8 +93,20 @@ input[type="text"] {
     padding: 3px 10px;
     border-top: 1px solid #aaa;
     border-bottom: 1px solid #aaa;
+    a {
+      color: #009;
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
   #todo_label {
     font-size: 20px;
+  }
+  a#add_todo_list {
+    color: #009;
+    &:hover {
+      text-decoration: none;
+    }
   }
 }

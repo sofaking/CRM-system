@@ -33,5 +33,5 @@
   <ul class="todo_lists" id=<%= "project_#{@project.id}" %> >
     <li><%= render @project.todo_lists %></li>
   </ul>
-  <%= link_to "add todo list", account_project_todo_lists_path(todo_list: {name: 'New todo list', project_id: @project.id}, commit: 'Create todo list', account_id: @project.account.id, project_id: @project.id), method: :post, remote: true %>
+  <%= link_to "add todo list", account_project_todo_lists_path(todo_list: {name: 'New todo list', project_id: @project.id}, commit: 'Create todo list', account_id: @project.account.id, project_id: @project.id), method: :post, remote: true, id: :add_todo_list %>
 </div>
