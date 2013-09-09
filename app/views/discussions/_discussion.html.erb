@@ -1,25 +1,9 @@
 <% cache discussion do %>
   <div class="form_discussion">
-    <%= form_for discussion, url: account_project_discussion_path(discussion.project.account, discussion.project, discussion), remote: true do |f| %>
-      <% if discussion.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(discussion.errors.count, "error") %> prohibited this discussion from being saved:</h2>
-
-          <ul>
-          <% discussion.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-          </ul>
-        </div>
-      <% end %>
-
       <div class="field">
-        <%= f.label discussion.creator.email %><br/>
-        <%= f.text_field :title %><br/>
-        <%= f.text_area :description %>
-        <%= f.submit id: :submit %>
-        <%= link_to 'Destroy', account_project_discussion_path(discussion.project.account, discussion.project, discussion), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, id: 'destroy' %>
+        <%= discussion.creator.email %>
+        <%= link_to discussion.title, [discussion.project.account, discussion.project, discussion] %> -
+        <%= discussion.description %>
       </div>
-    <% end %>
   </div>
 <% end %>
