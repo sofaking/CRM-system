@@ -44,6 +44,11 @@
         border-bottom: 1px solid #777;
         min-width: 240px;
       }
+      input[type="submit"] {
+        margin-top: 10px;
+        font-size: 14px;
+        width: 240px;
+      }
     }
   }
   #footer {
