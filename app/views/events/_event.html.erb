@@ -4,12 +4,7 @@
       <span class='field'>
         <%= link_to event.title, [current_user.account, event.project, event] %> 
         <%= event.description %>
-        <% if event.starts_at == event.ends_at %>
-          <%= event.starts_at.strftime("%D") %>
-        <% else %>
-          <%= event.starts_at.strftime("%D") %> -
-          <%= event.ends_at.strftime("%D") %>
-        <% end %>
+        <span class='event_date'><%= normilize_event_date event.starts_at, event.ends_at %></span>
         <span class='actions'>
           <%= link_to 'Edit', edit_account_project_event_path(current_user.account, event.project, event), method: :get, remote: true %>
           <%= link_to 'Destroy', [current_user.account, event.project, event], method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
