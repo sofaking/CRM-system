@@ -1,0 +1,35 @@
+// Place all the styles related to the TodoLists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.events {
+  list-style: none;
+  padding-left: 20px;
+  a {
+    color: #009;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  #event_name {
+    font-size: 20px;
+  }
+  
+  #event_header {
+    font-size: 15px;
+  }
+  
+  .event {
+    padding: 10px 0;
+  }
+}
+
+.all_events {
+  text-align: left;
+}
+
+#event {
+  text-align: left;
+  padding: 20px;
+}
