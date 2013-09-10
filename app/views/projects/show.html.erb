@@ -42,5 +42,5 @@
   <ul class="discussions" id=<%= "project_#{@project.id}" %> >
     <li><%= render @project.discussions %></li>
   </ul>
-  <%= link_to "add discussion", account_project_discussions_path(discussion: {title: 'New discussion', project_id: @project.id, user_id: current_user.id}, commit: 'Create discussion', account_id: @project.account.id, project_id: @project.id), method: :post, remote: true %>
+  <%= link_to "add discussion", new_account_project_discussion_path(current_user.account, @project) %>
 </div>
