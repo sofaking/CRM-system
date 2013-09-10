@@ -68,6 +68,7 @@ class EventsController < ApplicationController
     @event.destroy
     respond_to do |format|
       format.html { redirect_to account_project_url(current_user.account, @event.project) }
+      format.js { @project = @event.project }
       format.json { head :no_content }
     end
   end
