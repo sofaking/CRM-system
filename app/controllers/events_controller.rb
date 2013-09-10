@@ -38,6 +38,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       if @event.save
         format.html { redirect_to account_project_url(current_user.account, @event.project), notice: 'Event was successfully created.' }
+        format.js { @project = @event.project }
         format.json { render action: 'show', status: :created, location: @event }
       else
         format.html { render action: 'new' }
@@ -52,6 +53,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to account_project_url(current_user.account, @event.project), notice: 'Event was successfully updated.' }
+        format.js { @project = @event.project }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
