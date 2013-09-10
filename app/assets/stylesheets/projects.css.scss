@@ -49,12 +49,12 @@
 
 .actions {
   font-size: 12px;
-  padding-left: 20px;
+  padding-left: 5px;
   position: absolute;
   visibility: hidden;
 }
 
-.field:hover .actions {
+.field:hover .actions, .actions:hover {
   position: absolute;
   visibility: visible;
 }
@@ -73,6 +73,7 @@ input[type="text"]:focus + #actions, #actions:hover {
 
 input[type="text"] {
   background: transparent;
+  position: relative;
   border: none;
   outline: none;
   border-bottom: 1px solid transparent;
@@ -110,7 +111,10 @@ input[type="text"] {
       }
     }
   }
-  #todo_label {
+  #todo_lists_label {
+    font-size: 20px;
+  }
+  #events_label {
     font-size: 20px;
   }
   a#add_todo_list {
