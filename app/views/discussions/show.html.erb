@@ -12,11 +12,12 @@
 			<br/>
 		</span>
 		<p>
-			<%= @discussion.description %>	
+			<%= @discussion.description %>
 		</p>
 		<span class='actions'>
       <%= link_to 'Edit', edit_account_project_discussion_path(@discussion.project.account, @discussion.project, @discussion) %>
       <%= link_to 'Destroy', [@discussion.project.account, @discussion.project, @discussion], method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Back', :back %>
     </span>
 	</div>
 </div>
