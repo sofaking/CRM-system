@@ -1,4 +1,5 @@
 class Event < ActiveRecord::Base
+  belongs_to :project
   def as_json(options = {})
       {
         id: self.id,
