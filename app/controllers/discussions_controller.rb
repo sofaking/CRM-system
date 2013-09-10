@@ -29,7 +29,7 @@ class DiscussionsController < ApplicationController
     
     respond_to do |format|
       if @discussion.save
-        format.html { redirect_to @discussion, notice: 'Discussion was successfully created.' }
+        format.html { redirect_to new_account_project_discussion_url(@discussion.project.account, @discussion.project, @discussion), notice: 'Discussion was successfully created.' }
         format.json { render action: 'show', status: :created, location: @discussion }
       else
         format.html { render action: 'new' }
