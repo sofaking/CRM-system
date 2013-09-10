@@ -19,7 +19,7 @@ class DiscussionsController < ApplicationController
 
   # GET /discussions/1/edit
   def edit
-    @discussion = Discussion.find_by('id', params[:desc_id])
+    @discussion = Discussion.find(params[:id])
   end
 
   # POST /discussions
