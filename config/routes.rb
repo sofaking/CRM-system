@@ -1,27 +1,21 @@
 TestForCalendar::Application.routes.draw do
-<<<<<<< HEAD
-=======
-
-  root 'home#index', as: 'home'
->>>>>>> master
   
   resources :users
 
   resources :accounts do
     resources :projects do
-<<<<<<< HEAD
       resources :discussions
-=======
-      resources :events
->>>>>>> master
       resources :todo_lists do
         resources :todos
       end
     end
+    resources :events
   end
-  
-  get 'calendar' => 'calendar#index'
-  
+
+  root 'home#index', as: 'home'
+
+  get 'admin' => 'admin#index'
+
   controller :sessions do
     get 'login' => :new
     post 'login' => :create

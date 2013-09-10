@@ -1,21 +1,14 @@
-<div id='todo_list' class='paper'>
-  <div class='path'>
-    <%= link_to 'Projects', current_user.account %> >
-    <%= link_to @todo_list.project.name, account_project_path(@todo_list.project.account, @todo_list.project) %> >
-    <%= link_to @todo_list.name, '' %>
-  </div>
-  <span class='editing_todo_list_<%= @todo_list.id %>' id='todo_list_header'>
-    <span class='field'>
-      <%= link_to @todo_list.name, [@todo_list.project.account, @todo_list.project, @todo_list] %> 
-      <%= @todo_list.description %>
-      <span class='actions'>
-        <%= link_to 'Edit', edit_account_project_todo_list_path(@todo_list.project.account, @todo_list.project, @todo_list), method: :get, remote: true %>
-        <%= link_to 'Destroy', [@todo_list.project.account, @todo_list.project, @todo_list], method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
-      </span>
-    </span>
-    <ul class="todos" id=<%= "todo_list_#{@todo_list.id}" %>>
-      <%= render @todo_list.todos %>
-    </ul>
-    <%= link_to "add todo", account_project_todo_list_todos_path(todo: {name: 'New todo', todo_list_id: @todo_list.id}, commit: 'Create todo', account_id: @todo_list.project.account.id, project_id: @todo_list.project.id, todo_list_id: @todo_list.id), method: :post, remote: true %>
-  </span>
-</div>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @todo_list.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @todo_list.description %>
+</p>
+
+<%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
+<%= link_to 'Back', todo_lists_path %>

@@ -1,31 +1,29 @@
-<div class='paper'>
-  <h1>Listing projects</h1>
+<h1>Listing projects</h1>
 
-  <table>
-    <thead>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projects.each do |project| %>
       <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <td><%= project.name %></td>
+        <td><%= project.description %></td>
+        <td><%= link_to 'Show', project %></td>
+        <td><%= link_to 'Edit', edit_project_path(project) %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    </thead>
+    <% end %>
+  </tbody>
+</table>
 
-    <tbody>
-      <% @projects.each do |project| %>
-        <tr>
-          <td><%= project.name %></td>
-          <td><%= project.description %></td>
-            <td><%= link_to 'Show', account_project_path(current_user.account, project) %></td>
-            <td><%= link_to 'Edit', edit_account_project_path(current_user.account, project) %></td>
-            <td><%= link_to 'Destroy', account_project_path(current_user.account, project), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+<br>
 
-  <br>
-
-  <%= link_to 'New Project', new_account_project_event_path(current_user.account, @projects) %>
-</div>
+<%= link_to 'New Project', new_project_path %>

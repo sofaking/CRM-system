@@ -5,37 +5,12 @@
 .todo_lists {
   list-style: none;
   padding-left: 20px;
-  a {
-    color: #009;
-    &:hover {
-      text-decoration: none;
-    }
-  }
 
   #todo_list_name {
     font-size: 20px;
   }
-<<<<<<< HEAD
 }
 
 .all_todo_lists {
-=======
-  
-  #todo_list_header {
-    font-size: 15px;
-  }
-  
-  .todo_list {
-    padding: 10px 0;
-  }
-}
-
-.all_todo_lists {
-  text-align: left;
-}
-
-#todo_list {
-  text-align: left;
->>>>>>> master
   padding: 20px;
 }

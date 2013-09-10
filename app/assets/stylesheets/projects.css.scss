@@ -2,22 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
-.path {
-  font-size: 14px;
-  padding-bottom: 10px;
-  & a {
-    color: #009;
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-
 .project {
-  text-align: left;
   text-decoration: none;
   color: black;
   #project_name {
@@ -47,18 +32,11 @@
   }
 }
 
-<<<<<<< HEAD
 #edit {
-=======
-.actions {
-  font-size: 12px;
-  padding-left: 5px;
->>>>>>> master
   position: absolute;
   visibility: hidden;
 }
 
-<<<<<<< HEAD
 input[type="text"] {
   background: transparent;
   border: none;
@@ -70,33 +48,14 @@ input[type="text"] {
     position: relative;
     visibility: visible;
   }
-=======
-.field:hover .actions, .actions:hover {
-  position: absolute;
-  visibility: visible;
 }
 
-#actions {
-  font-size: 12px;
-  padding-left: 20px;
-  position: absolute;
-  visibility: hidden;
->>>>>>> master
+#destroy {
+  display: none;
 }
 
-input[type="text"]:focus + #actions, #actions:hover {
-  position: absolute;
-  visibility: visible;
-}
-
-input[type="text"] {
-  background: transparent;
-  position: relative;
-  border: none;
-  outline: none;
-  border-bottom: 1px solid transparent;
-  min-width: 240px;
-  &:hover { border-bottom: 1px dotted #777; }
+.field:hover #destroy {
+  display: inline;
 }
 
 .projects {
@@ -109,11 +68,7 @@ input[type="text"] {
 }
 
 .form_project {
-<<<<<<< HEAD
   padding: 30px;
-=======
-  text-align: left;
->>>>>>> master
   #project_name {
     font-size: 30px;
     width: 60%;
@@ -126,22 +81,8 @@ input[type="text"] {
     padding: 3px 10px;
     border-top: 1px solid #aaa;
     border-bottom: 1px solid #aaa;
-<<<<<<< HEAD
   }
   #todo_label {
-=======
-    a {
-      color: #009;
-      &:hover {
-        text-decoration: none;
-      }
-    }
-  }
-  #todo_lists_label {
-    font-size: 20px;
-  }
-  #events_label {
->>>>>>> master
     font-size: 20px;
   }
 }

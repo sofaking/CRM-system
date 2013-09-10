@@ -11,11 +11,11 @@
       <% image_tag("logo.png") %>
       <%= @page_title || t('.title') %>
       <div id="login">
-        <% if current_user %>
-          <%= "Hello #{current_user.email}" %>
-          <%= link_to t('log_out'), logout_url, method: :delete %>
+        <% if session[:user_id] %>
+          <%= "Hello #{User.find(session[:user_id]).email}" %>
+          <%= link_to t('logout'), logout_url, method: :delete %>
         <% else %>
-          <%= link_to t('log_in'), login_path %>
+          <%= link_to t('login'), login_path %>
         <% end %>
       </div>
     </div>
@@ -27,7 +27,6 @@
           <p id="notice"><%= notice %></p>
         <% end %>
         <div id='form_user'>
-          <h2>You may create new account</h2>
           <%= render 'users/form' %>
         </div>    
       </div>

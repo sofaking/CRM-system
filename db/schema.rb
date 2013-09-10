@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20130905135020) do
-=======
-ActiveRecord::Schema.define(version: 20130904100609) do
->>>>>>> master
 
   create_table "accounts", force: true do |t|
     t.integer  "user_id"
@@ -23,21 +19,19 @@ ActiveRecord::Schema.define(version: 20130904100609) do
     t.datetime "updated_at"
   end
 
-<<<<<<< HEAD
   create_table "discussions", force: true do |t|
     t.integer  "user_id"
     t.integer  "project_id"
     t.string   "title"
     t.text     "description"
-=======
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "events", force: true do |t|
-    t.integer  "project_id"
     t.string   "title"
-    t.text     "description"
-    t.datetime "starts_at"
-    t.datetime "ends_at"
-    t.boolean  "all_day"
->>>>>>> master
+    t.string   "name"
+    t.datetime "start_time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
