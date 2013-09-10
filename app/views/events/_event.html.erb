@@ -1,0 +1,17 @@
+<% cache event do%>
+  <li class='todo_list'>
+    <span class='editing_todo_list_<%= event.id %>' id='todo_list_header'>
+      <span class='field'>
+        <%= link_to event.title, [current_user.account, event.project, event] %> 
+        <%= event.description %>
+        <%= event.starts_at.strftime("%D") %> -
+        <%= event.ends_at.strftime("%D") %>
+        <%= check_box 'event', 'all_day', checked: event.all_day, data: {url: account_project_event_path(current_user.account, event.project, event, event: {all_day: not(event.all_day)}, commit: 'Update event'),  remote: true, method: :put}%>
+        <span class='actions'>
+          <%= link_to 'Edit', edit_account_project_todo_list_path(current_user.account, event.project, event), method: :get, remote: true %>
+          <%= link_to 'Destroy', [current_user.account, event.project, event], method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
+        </span>
+      </span>
+    </span>
+  </li>
+<% end %>
