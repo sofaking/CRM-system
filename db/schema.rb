@@ -28,14 +28,6 @@ ActiveRecord::Schema.define(version: 20130905135020) do
     t.datetime "updated_at"
   end
 
-  create_table "events", force: true do |t|
-    t.string   "title"
-    t.string   "name"
-    t.datetime "start_time"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "projects", force: true do |t|
     t.integer  "account_id"
     t.string   "name"
