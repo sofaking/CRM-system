@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Test calendar interface</title>
+    <title>CRM system</title>
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
-  <body id="<%= controller.controller_name %>">
+  <body id="<%= controller.controller_name %>_page">
     <div id="banner">
       <% image_tag("logo.png") %>
-      <%= @page_title || t('.title') %>
+      <span id='title'>
+        <%= @page_title || t('.title') %>
+      </span>
       <div id="login">
         <% if session[:user_id] %>
+          You may <%= link_to t('sign_out'), logout_url, method: :delete %> here.<br/>
           <%= "Hello #{User.find(session[:user_id]).email}" %>
-          <%= link_to t('logout'), logout_url, method: :delete %>
         <% else %>
-          <%= link_to t('login'), login_path %>
+          <%= link_to t('log_in'), login_path %>
         <% end %>
       </div>
     </div>
@@ -23,6 +25,7 @@
       <div id="side">
         <ul>
           <li><%= link_to_unless_current t('.projects'), current_user.account %></li>
+          <li><%= link_to_unless_current t('.calendar'), calendar_path %></li>
         </ul>
       </div>
       <div id="main"> 

@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.todo_lists {
+.events {
   list-style: none;
   padding-left: 20px;
   a {
@@ -12,30 +12,30 @@
     }
   }
 
-  #todo_list_name {
+  #event_name {
     font-size: 20px;
   }
-<<<<<<< HEAD
-}
-
-.all_todo_lists {
-=======
   
-  #todo_list_header {
+  #event_header {
     font-size: 15px;
   }
   
-  .todo_list {
+  .event {
     padding: 10px 0;
+  }
+  
+  .event_date {
+    background: #bfb;
+    padding: 0 6px;
+    border-radius: 10px;
   }
 }
 
-.all_todo_lists {
+.all_events {
   text-align: left;
 }
 
-#todo_list {
+#event {
   text-align: left;
->>>>>>> master
   padding: 20px;
 }

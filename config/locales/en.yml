@@ -20,4 +20,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  layouts:
+    application:
+      title: Projectpad
+      сopyright: © 2013 Petrov Vladislav with helping by Mike Zogarulko
+  home:
+    index:
+      title: Projectpad
+      сopyright: © 2013 Petrov Vladislav with helping by Mike Zogarulko

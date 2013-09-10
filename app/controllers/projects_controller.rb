@@ -4,6 +4,10 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
+<<<<<<< HEAD
+=======
+    @projects = current_user.account.projects
+>>>>>>> master
   end
 
   # GET /projects/1

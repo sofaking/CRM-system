@@ -18,23 +18,48 @@
 
     <div class="field">
       <%= f.text_field :name %>
+<<<<<<< HEAD
       <span id='edit'><%= f.submit value: ' Save ' %> or <%= link_to 'Cancel', '' %></span>
       <%= link_to 'Destroy', account_project_path(@project.account, @project), method: :delete, data: { confirm: 'Are you sure?' }, id: 'destroy' %>
       <br/>
       <%= f.text_field :description %>
       <span id='edit'><%= f.submit value: ' Save ' %> or <%= link_to 'Cancel', '' %></span>
+=======
+      <span id='actions'>
+        <%= f.submit value: ' Save ' %> or <%= link_to 'Cancel', '' %>
+        <%= link_to 'Destroy', account_project_path(@project.account, @project), method: :delete, data: { confirm: 'Are you sure?' }%>
+      </span>
+      <br/>
+      <%= f.text_field :description %>
+      <span id='actions'>
+        <%= f.submit value: ' Save ' %> or <%= link_to 'Cancel', '' %>
+        <%= link_to 'Destroy', account_project_path(@project.account, @project), method: :delete, data: { confirm: 'Are you sure?' }%>
+      </span>
+>>>>>>> master
     </div>
   <% end %>
   <div id='project_menu'>
     <%= link_to "#{@project.todo_lists.count} Todo lists", account_project_todo_lists_path(@project.account, @project) %>
+<<<<<<< HEAD
     <%= link_to "#{@project.discussions.count} Discussions", account_project_discussions_path(@project.account, @project) %>
   </div>
   <div>
   <h1 id='todo_label'>To-do lists</h1>
   <br/>
+=======
+  </div>
+  <h1 id='todo_lists_label'>To-do lists</h1>
+  <%= button_to "add todo list", account_project_todo_lists_path(current_user.account, @project, todo_list: {name: 'New todo list', project_id: @project.id}, commit: 'Create todo list'), method: :post, remote: true %>
+>>>>>>> master
   <ul class="todo_lists" id=<%= "project_#{@project.id}" %> >
-    <li><%= render @project.todo_lists %></li>
+    <%= render @project.todo_lists %>
   </ul>
+  <h1 id='events_label'>Events</h1>
+  <%= button_to "add event", account_project_events_path(current_user.account, @project, event: {title: 'New event', starts_at: Date.today, ends_at: Date.today, project_id: @project.id}, commit: 'Create event'), method: :post, remote: true %>
+  <ul class="events" id=<%= "project_#{@project.id}" %> >
+    <%= render @project.events %>
+  </ul>
+<<<<<<< HEAD
   <%= link_to "add todo list", account_project_todo_lists_path(todo_list: {name: 'New todo list', project_id: @project.id}, commit: 'Create todo list', account_id: @project.account.id, project_id: @project.id), method: :post, remote: true %>
   </div>
   <div>
@@ -43,4 +68,6 @@
     <li><%= render @project.discussions %></li>
   </ul>
   <%= link_to "add discussion", new_account_project_discussion_path(current_user.account, @project) %>
+=======
+>>>>>>> master
 </div>
