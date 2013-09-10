@@ -33,14 +33,14 @@
   <div id='project_menu'>
     <%= link_to "#{@project.todo_lists.count} Todo lists", account_project_todo_lists_path(@project.account, @project) %>
   </div>
-  <h1 id='todo_label'>To-do lists</h1>
+  <h1 id='todo_lists_label'>To-do lists</h1>
   <ul class="todo_lists" id=<%= "project_#{@project.id}" %> >
     <%= render @project.todo_lists %>
   </ul>
-  <%= link_to "add todo list", account_project_todo_lists_path(todo_list: {name: 'New todo list', project_id: @project.id}, commit: 'Create todo list', account_id: @project.account.id, project_id: @project.id), method: :post, remote: true, id: :add_todo_list %>
-  <h1 id='event'>Events</h1>
+  <%= link_to "add todo list", account_project_todo_lists_path(current_user.account, @project, todo_list: {name: 'New todo list', project_id: @project.id}, commit: 'Create todo list'), method: :post, remote: true, id: :add_todo_list %>
+  <h1 id='events_label'>Events</h1>
   <ul class="events" id=<%= "project_#{@project.id}" %> >
     <%= render @project.events %>
   </ul>
-  <%= link_to "add event", account_project_events_path(event: {name: 'New event', project_id: @project.id}, commit: 'Create event', account_id: @project.account.id, project_id: @project.id), method: :post, remote: true, id: :add_event %>
+  <%= link_to "add event", account_project_events_path(current_user.account, @project, event: {title: 'New event', starts_at: Date.today, ends_at: Date.today, project_id: @project.id}, commit: 'Create event'), method: :post, remote: true, id: :add_event %>
 </div>
