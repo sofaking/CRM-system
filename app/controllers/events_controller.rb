@@ -23,6 +23,7 @@ class EventsController < ApplicationController
     @event = Event.new
     @event.starts_at = params[:date]
     @event.ends_at = params[:date]
+    @event.project = Project.find(params[:project_id])
   end
 
   # GET /events/1/edit
@@ -77,6 +78,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:title, :description, :starts_at, :ends_at, :all_day)
+      params.require(:event).permit(:project_id, :title, :description, :starts_at, :ends_at, :all_day)
     end
 end
