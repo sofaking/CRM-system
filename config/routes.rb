@@ -6,11 +6,11 @@ TestForCalendar::Application.routes.draw do
 
   resources :accounts do
     resources :projects do
-      resources :events
       resources :todo_lists do
         resources :todos
       end
     end
+    resources :events
   end
   
   get 'calendar' => 'calendar#index'
