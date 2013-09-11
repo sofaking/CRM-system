@@ -11,7 +11,7 @@ module EventsHelper
     
     def shortening_date(date, all_day)
       format = ""
-      format += "%e"  unless date.strftime("%e %a %B") == Date.today.strftime("%e %a %B")
+      format += "%e"  unless date.strftime("%V%Y") == Date.today.strftime("%V%Y")
       format += " %A" unless date.strftime("%a %B") == Date.today.strftime("%a %B")
       format += " %B" unless date.strftime("%B") == Date.today.strftime("%B")
       format += " %Y" unless date.strftime("%Y") == Date.today.strftime("%Y")
