@@ -26,6 +26,6 @@
     <%= @event.all_day %>
   </p>
 
-  <%= link_to 'Edit', account_project_event_path(current_user.account, @event.project, @event) %> |
+  <%= link_to 'Edit', account_event_path(current_user.account, @event) %> |
   <%= link_to 'Back', :back %>
 </div>

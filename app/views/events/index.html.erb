@@ -23,13 +23,13 @@
           <td><%= event.starts_at %></td>
           <td><%= event.ends_at %></td>
           <td><%= event.all_day %></td>
-          <td><%= link_to 'Show', account_project_event_path(current_user.account, event.project, event) %></td>
-          <td><%= link_to 'Edit', edit_account_project_event_path(current_user.account, event.project, event) %></td>
-          <td><%= link_to 'Destroy', account_project_event_path(current_user.account, event.project, event), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Show', account_event_path(current_user.account, event) %></td>
+          <td><%= link_to 'Edit', edit_account_event_path(current_user.account, event) %></td>
+          <td><%= link_to 'Destroy', account_event_path(current_user.account, event), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
   
-  <%= link_to 'New Event', new_account_project_event_path(current_user.account, @events.first.project) %>
+  <%= link_to 'New Event', new_account_event_path(current_user.account) %>
 </div>

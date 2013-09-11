@@ -39,7 +39,7 @@
     <%= render @project.todo_lists %>
   </ul>
   <h1 id='events_label'>Events</h1>
-  <%= link_to "add event", account_project_events_path(current_user.account, @project, event: {title: 'New event', starts_at: Date.today, ends_at: Date.today, project_id: @project.id}, commit: 'Create event'), method: :post, remote: true %>
+  <%= link_to "add event", account_events_path(current_user.account, event: {title: 'New event', starts_at: Date.today, ends_at: Date.today, project_id: @project.id}, commit: 'Create event'), method: :post, remote: true %>
   <ul class="events" id=<%= "project_#{@project.id}" %> >
     <%= render @project.events %>
   </ul>
