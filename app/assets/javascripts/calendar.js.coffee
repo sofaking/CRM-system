@@ -15,7 +15,7 @@ $(document).on "ready page:load", ->
     timeFormat: "HH:mm{ - HH:mm} "
     
     eventSources: [
-      url: "/events"
+      url: events_url
       color: "green"
       textColor: "black"
       ignoreTimezone: false
@@ -23,7 +23,7 @@ $(document).on "ready page:load", ->
     
     eventClick: (event) ->
       if event.url
-        window.open event.url
+        window.open event.url, "_self"
         false
 
     dayClick: (date, allDay, jsEvent, view) ->
