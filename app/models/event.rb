@@ -11,7 +11,7 @@ class Event < ActiveRecord::Base
         end: ends_at.rfc822,
         allDay: self.all_day,
         recurring: false,
-        url: Rails.application.routes.url_helpers.account_event_path(self.project.account.id, id)
+        url: Rails.application.routes.url_helpers.edit_account_event_path(self.project.account.id, id)
       }
     end
 end
