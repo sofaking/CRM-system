@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
   def as_json(options = {})
       {
         id: self.id,
-        title: self.title,
+        title: self.title + ' - ' + self.project.name,
         description: self.description || "",
         start: starts_at.rfc822,
         end: ends_at.rfc822,

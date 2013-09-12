@@ -1,5 +1,5 @@
 class CalendarController < ApplicationController
   def index
-    @events_url = account_events_url(current_user.account)
+    @events_path = account_events_path(current_user.account)
   end
 end
