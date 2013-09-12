@@ -1,8 +1,10 @@
-<div class='paper'>
-  <h1>Editing event</h1>
+<div id='edit_event' class='paper'>
+  <div class='path'>
+    <%= link_to 'Projects', current_user.account %> >
+    <%= link_to @event.project.name, account_project_path(@event.project.account, @event.project) if @event.project %> >
+    <%= link_to @event.title, '' %>
+  </div>
+  <h1>Event</h1>
 
   <%= render 'form' %>
-
-  <%= link_to 'Show', account_event_path(current_user.account, @event) %> |
-  <%= link_to 'Back', :back %>
 </div>

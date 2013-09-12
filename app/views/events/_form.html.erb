@@ -13,23 +13,25 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :title %><br>
-      <%= f.text_field :title %>
+      <%= f.text_field :title, placeholder: 'Event title' %>
     </div>
     <div class="field">
-      <%= f.label :description %><br>
-      <%= f.text_area :description %>
+      <%= f.text_field :description, placeholder: 'Event description' %>
     </div>
     <div class="field">
-      <%= f.label :starts_at %><br>
+      <%= f.label :project %>
+      <%= f.collection_select :project_id, current_user.account.projects, :id, :name, {include_blank: true} %>
+    </div>
+    <div class="field">
+      <%= f.label :starts_at %>
       <%= f.datetime_select :starts_at %>
     </div>
     <div class="field">
-      <%= f.label :ends_at %><br>
+      <%= f.label :ends_at %>
       <%= f.datetime_select :ends_at %>
     </div>
     <div class="field">
-      <%= f.label :all_day %><br>
+      <%= f.label :all_day %>
       <%= f.check_box :all_day %>
     </div>
     <div id='edit'>
