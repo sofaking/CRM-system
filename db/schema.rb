@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20130904100609) do
   end
 
   create_table "events", force: true do |t|
+    t.integer  "account_id"
     t.integer  "project_id"
     t.string   "title"
     t.text     "description"
