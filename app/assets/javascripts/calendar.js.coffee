@@ -9,7 +9,7 @@ $(document).on "ready page:load", ->
     timeFormat: "HH:mm{ - HH:mm} "
     
     eventSources: [
-      url: $("#calendar").attr("events_path")
+      url: $("#calendar").attr("account_path") + '/events'
       color: "green"
       textColor: "black"
       ignoreTimezone: false
@@ -19,5 +19,5 @@ $(document).on "ready page:load", ->
       window.open event.url, "_self" if event.url
 
     dayClick: (date, allDay, jsEvent, view) ->
-      window.open "events/new?date=" + date, "_self"
+      window.open $("#calendar").attr("account_path") + "/events/new?date=" + date, "_self"
   )

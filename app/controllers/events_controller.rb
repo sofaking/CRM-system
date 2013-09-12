@@ -4,11 +4,10 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = current_user.account.events
     
     respond_to do |format|
       format.html # index.html.erb
-      format.xml { render  xml: @events }
       format.js  { render json: @events }
     end
   end
@@ -33,6 +32,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
+    @event.account = current_user.account
 
     respond_to do |format|
       if @event.save
