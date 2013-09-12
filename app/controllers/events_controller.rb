@@ -23,7 +23,6 @@ class EventsController < ApplicationController
     @event = Event.new
     @event.starts_at = params[:date]
     @event.ends_at = params[:date]
-    @event.project = Project.find(params[:project_id])
   end
 
   # GET /events/1/edit
