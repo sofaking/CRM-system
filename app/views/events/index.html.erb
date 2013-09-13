@@ -31,5 +31,5 @@
     </tbody>
   </table>
   
-  <%= link_to 'New Event', new_account_event_path(current_user.account) %>
+  <%= link_to 'New Event', new_account_event_path(current_user.account, @events.first.project) %>
 </div>

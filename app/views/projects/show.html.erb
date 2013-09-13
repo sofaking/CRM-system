@@ -9,6 +9,7 @@
   <div id='project_menu'>
     <%= link_to "#{@project.todo_lists.count} Todo lists", account_project_todo_lists_path(@project.account, @project) %>
   </div>
+    <li><%= link_to "Events (#{@project.events.count})", account_events_path(@project.account, @project) %></li>
   
   <h1 id='todo_lists_label'>To-do lists</h1>
   <%= link_to "add todo list", account_project_todo_lists_path(current_user.account, @project, todo_list: {name: 'New todo list', project_id: @project.id}, commit: 'Create todo list'), method: :post, remote: true %>

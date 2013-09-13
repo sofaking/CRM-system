@@ -5,7 +5,7 @@ TestForCalendar::Application.routes.draw do
   resources :users
 
   resources :accounts do
-    resources :events
+    resources :events, path: '(/projects/:project_id)/events'
     resources :projects do
       resources :todo_lists do
         resources :todos

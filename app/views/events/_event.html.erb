@@ -2,12 +2,12 @@
   <li class='todo_list'>
     <span class='editing_event_<%= event.id %>' id='event_header'>
       <span class='field'>
-        <%= link_to event.title, [current_user.account, event] %> 
+        <%= link_to event.title, account_event_path(current_user.account, event.project, event) %> 
         <%= event.description %>
-        <span class='event_date'><%= normilize_event_date event.starts_at, event.ends_at, event.all_day %></span>
+        <span class='event_date'><%= normilize_event_date(event.starts_at, event.ends_at, event.all_day) %></span>
         <span class='actions'>
           <%= link_to 'Edit', edit_account_event_path(current_user.account, event), method: :get, remote: true %>
-          <%= link_to 'Destroy', [current_user.account, event], method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
+          <%= link_to 'Destroy', account_event_path(current_user.account, event), method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
         </span>
       </span>
     </span>
