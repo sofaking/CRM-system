@@ -4,12 +4,14 @@
     <%= link_to @project.name, '' %>
   </div>
   
-  <%= render 'form' %>
-
-  <div id='project_menu'>
-    <%= link_to "#{@project.todo_lists.count} Todo lists", account_project_todo_lists_path(@project.account, @project) %>
-  </div>
+  <div id='project_head'>
+    <%= render 'form' %>
+  </div>  
+  
+  <ul id='project_menu'>
+    <li><%= link_to "Todo lists (#{@project.todo_lists.count})", account_project_todo_lists_path(@project.account, @project) %></li>
     <li><%= link_to "Events (#{@project.events.count})", account_events_path(@project.account, @project) %></li>
+  </ul>
   
   <h1 id='todo_lists_label'>To-do lists</h1>
   <%= link_to "add todo list", account_project_todo_lists_path(current_user.account, @project, todo_list: {name: 'New todo list', project_id: @project.id}, commit: 'Create todo list'), method: :post, remote: true %>
