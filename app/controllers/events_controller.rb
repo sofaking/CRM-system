@@ -4,11 +4,9 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = current_user.account.events
-    
     respond_to do |format|
-      format.html # index.html.erb
-      format.js  { render json: @events }
+      format.html { @events = Event.where(project_id: params[:project_id]) }
+      format.js  { render json: Event.where(account_id: current_user.account.id) }
     end
   end
 

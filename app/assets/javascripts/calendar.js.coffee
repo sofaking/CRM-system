@@ -9,7 +9,7 @@ $(document).on "ready page:load", ->
     timeFormat: "HH:mm{ - HH:mm} "
     
     eventSources: [
-      url: $("#calendar").attr("account_path") + '/events'
+      url: '/calendar_events'
       color: "green"
       textColor: "black"
       ignoreTimezone: false
