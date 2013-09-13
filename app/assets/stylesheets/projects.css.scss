@@ -104,10 +104,15 @@ input[type="text"] {
     padding: 3px 10px;
     border-top: 1px solid #aaa;
     border-bottom: 1px solid #aaa;
-    a {
-      color: #009;
-      &:hover {
-        text-decoration: none;
+    li {
+      list-style: none;
+      display: inline;
+      padding: 0 5px;
+      a {
+        color: #009;
+        &:hover {
+          text-decoration: none;
+        }
       }
     }
   }
