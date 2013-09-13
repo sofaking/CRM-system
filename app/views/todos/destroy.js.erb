@@ -1,1 +1,1 @@
-$(".todos#todo_list_<%= @todo_list.id %>").html("<%= escape_javascript render(@todo_list.todos) %>");
+$("#todo_<%= @todo.id %>").remove();

@@ -30,7 +30,7 @@ class TodosController < ApplicationController
     respond_to do |format|
       if @todo.save
         format.html { redirect_to home_url, notice: 'Todo was successfully created.' }
-        format.js { @todo_list = @todo.todo_list }
+        format.js
         format.json { render action: 'show', status: :created, location: @todo }
       else
         format.html { render action: 'new' }
@@ -60,7 +60,7 @@ class TodosController < ApplicationController
     @todo.destroy
     respond_to do |format|
       format.html { redirect_to home_url }
-      format.js { @todo_list = @todo.todo_list }
+      format.js
       format.json { head :no_content }
     end
   end
