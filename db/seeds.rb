@@ -6,9 +6,18 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Role.delete_all
+Role.create([ 
+  {id: 1, title: "admin"},
+  {id: 2, title: "visiter"},
+  {id: 3, title: "client"}
+])
+puts "Стандартные роли:"
+puts Role.all.map(&:title)
+
 User.delete_all
 User.create(
-  { id: 1, email: 'admin', password: 'admin', password_confirmation: "admin" }
+  { id: 1, role_id: 1, email: 'admin', password: 'admin', password_confirmation: "admin" }
 )
 puts "Default users:"
 puts User.all.map(&:email)
