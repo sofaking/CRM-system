@@ -1,8 +1,8 @@
 class CreateProjectsAndAccounts < ActiveRecord::Migration
   def change
-    create_table :projects_and_accounts do |t|
-      t.belongs_to :project, index: true
-      t.belongs_to :account, index: true
+    create_table :projects_accounts do |t|
+      t.belongs_to :project
+      t.belongs_to :account
     end
   end
 end
