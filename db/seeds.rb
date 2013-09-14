@@ -12,58 +12,65 @@ roles = Role.create([
   {id: 2, title: "visiter"},
   {id: 3, title: "client"}
 ])
-if roles[1].save or roles[2].save or roles[3].save
+if roles.map(&:save)
   puts "Default roles: " + roles.map(&:title).join(', ')
 else
   puts '>>> Roles not created!'
 end
 
 User.delete_all
-user = User.create(
-  { id: 1, role_id: 1, email: 'admin@admin.com', password: 'admin', password_confirmation: "admin" }
-)
-if user.save
-  puts "Default users: " + user.email
+users = User.create([
+  { id: 1, role_id: 1, email: 'admin@admin.com',     password: 'admin',   password_confirmation: 'admin' },
+  { id: 2, role_id: 2, email: 'visiter@visiter.com', password: 'visiter', password_confirmation: 'visiter' },
+  { id: 3, role_id: 3, email: 'client@client.com',   password: 'client',  password_confirmation: 'client' }
+])
+if users.map(&:save)
+  puts "Default users: " + users.map(&:email).join(', ')
 else
   puts '>>> User not created!'
 end
 
 Todo.delete_all
-todo = Todo.create(
-  { id: 1, name: 'New todo', description: 'Todo description' }
-)
-if todo.save
-  puts "Default todo: " + todo.name
+todos = Todo.create([
+  { id: 1, name: 'New todo', description: 'Todo description' },
+  { id: 2, name: 'New todo', description: 'Todo description' }
+])
+if todos.map(&:save)
+  puts "Default todo: " + todos.map(&:name).join(', ')
 else
   puts '>>> Todo not created!'
 end
 
 TodoList.delete_all
-todolist = TodoList.create(
-  { id: 1, name: 'New todo list', description: 'Todo list description', todo_ids: [1] }
-)
-if todolist.save
-  puts "Default todo_list: " + todolist.name
+todolists = TodoList.create([
+  { id: 1, name: 'New todo list', description: 'Todo list description', todo_ids: [1] },
+  { id: 2, name: 'New todo list', description: 'Todo list description', todo_ids: [2] }
+])
+if todolists.map(&:save)
+  puts "Default todo_list: " + todolists.map(&:name).join(', ')
 else
   puts '>>> Todo list not created!'
 end
 
 Project.delete_all
-project = Project.create(
-  { id: 1, name: 'New project', description: 'Project description', todo_list_ids: [1] }
-)
-if project.save
-  puts "Default project: " + project.name
+projects = Project.create([
+  { id: 1, name: 'New project', description: 'Project description', todo_list_ids: [1] },
+  { id: 2, name: 'New project', description: 'Project description', todo_list_ids: [2] }
+])
+if projects.map(&:save)
+  puts "Default project: " + projects.map(&:name).join(', ')
 else
   puts '>>> Project list not created!'
 end
 
 Account.delete_all
-account = Account.create(
-  { user_id: 1, project_ids: [1] }
-)
-if account.save
-  puts "Default account: " + account.user_id.to_s
+accounts = Account.create([
+  { id: 1, user_id: 1, project_ids: [1] },
+  { id: 2, user_id: 2, project_ids: [2] },
+  { id: 3, user_id: 3, project_ids: [2] }
+])
+if accounts.map(&:save)
+  puts "Default account: " + accounts.map(&:user_id).map(&:to_s).join(', ')
 else
   puts '>>> Account list not created!'
 end
