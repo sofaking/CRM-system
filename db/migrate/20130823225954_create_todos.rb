@@ -4,7 +4,7 @@ class CreateTodos < ActiveRecord::Migration
     t.string :name
     t.string :description
     t.boolean :done
-    t.datetime :date
+    t.datetime :datetime
 
     t.timestamps
   end
