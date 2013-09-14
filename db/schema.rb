@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20130914192641) do
   end
 
   create_table "users", force: true do |t|
+    t.integer  "role_id"
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at"
