@@ -12,7 +12,7 @@ Role.create([
   {id: 2, title: "visiter"},
   {id: 3, title: "client"}
 ])
-puts "Стандартные роли:"
+puts "Default roles:"
 puts Role.all.map(&:title)
 
 User.delete_all
@@ -24,28 +24,28 @@ puts User.all.map(&:email)
 
 Todo.delete_all
 Todo.create(
-  { name: 'New todo', description: 'Todo description' }
+  { id: 1, name: 'New todo', description: 'Todo description' }
 )
 puts "Default todo:"
 puts Todo.all.map(&:name)
 
 TodoList.delete_all
 TodoList.create(
-  { name: 'New todo list', description: 'Todo list description', todo_ids: Todo.last.id }
+  { id: 1, name: 'New todo list', description: 'Todo list description', todo_ids: [1] }
 )
 puts "Default todo_list:"
 puts TodoList.all.map(&:name)
 
 Project.delete_all
 Project.create(
-  { name: 'New project', description: 'Project description', todo_list_ids: TodoList.last.id }
+  { id: 1, name: 'New project', description: 'Project description', todo_list_ids: [1] }
 )
 puts "Default project:"
 puts Project.all.map(&:name)
 
 Account.delete_all
 Account.create(
-  { user_id: User.last.id, project_ids: Project.last.id }
+  { user_id: 1, project_ids: [1] }
 )
 puts "Default account:"
 puts Account.all.map(&:user_id)
