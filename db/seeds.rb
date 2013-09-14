@@ -7,45 +7,63 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Role.delete_all
-Role.create([ 
+roles = Role.create([ 
   {id: 1, title: "admin"},
   {id: 2, title: "visiter"},
   {id: 3, title: "client"}
 ])
-puts "Default roles:"
-puts Role.all.map(&:title)
+if roles[1].save or roles[2].save or roles[3].save
+  puts "Default roles: " + roles.map(&:title).join(', ')
+else
+  puts '>>> Roles not created!'
+end
 
 User.delete_all
-User.create(
-  { id: 1, role_id: 1, email: 'admin', password: 'admin', password_confirmation: "admin" }
+user = User.create(
+  { id: 1, role_id: 1, email: 'admin@admin.com', password: 'admin', password_confirmation: "admin" }
 )
-puts "Default users:"
-puts User.all.map(&:email)
+if user.save
+  puts "Default users: " + user.email
+else
+  puts '>>> User not created!'
+end
 
 Todo.delete_all
-Todo.create(
+todo = Todo.create(
   { id: 1, name: 'New todo', description: 'Todo description' }
 )
-puts "Default todo:"
-puts Todo.all.map(&:name)
+if todo.save
+  puts "Default todo: " + todo.name
+else
+  puts '>>> Todo not created!'
+end
 
 TodoList.delete_all
-TodoList.create(
+todolist = TodoList.create(
   { id: 1, name: 'New todo list', description: 'Todo list description', todo_ids: [1] }
 )
-puts "Default todo_list:"
-puts TodoList.all.map(&:name)
+if todolist.save
+  puts "Default todo_list: " + todolist.name
+else
+  puts '>>> Todo list not created!'
+end
 
 Project.delete_all
-Project.create(
+project = Project.create(
   { id: 1, name: 'New project', description: 'Project description', todo_list_ids: [1] }
 )
-puts "Default project:"
-puts Project.all.map(&:name)
+if project.save
+  puts "Default project: " + project.name
+else
+  puts '>>> Project list not created!'
+end
 
 Account.delete_all
-Account.create(
+account = Account.create(
   { user_id: 1, project_ids: [1] }
 )
-puts "Default account:"
-puts Account.all.map(&:user_id)
+if account.save
+  puts "Default account: " + account.user_id.to_s
+else
+  puts '>>> Account list not created!'
+end
