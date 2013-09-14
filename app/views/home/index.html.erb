@@ -15,7 +15,8 @@
           <%= "Hello #{current_user.email}" %>
           <%= link_to t('log_out'), logout_url, method: :delete %>
         <% else %>
-          <%= link_to t('log_in'), login_path %>
+          <%= link_to t('log_in'), login_path, remote: true, method: :get %><br/>
+          <%= link_to t('Create new'), new_user_path, remote: true, method: :get %>
         <% end %>
       </div>
     </div>
@@ -27,8 +28,7 @@
           <p id="notice"><%= notice %></p>
         <% end %>
         <div id='form_user'>
-          <h2>You may create new account</h2>
-          <%= render 'users/form' %>
+          <%= render template: 'users/new' %>
         </div>    
       </div>
       <div id="footer">
