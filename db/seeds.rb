@@ -12,7 +12,7 @@ roles = Role.create([
   {id: 2, title: "visiter"},
   {id: 3, title: "client"}
 ])
-if roles.map(&:save)
+if roles[1].save and roles[2].save and roles[3].save
   puts "Default roles: " + roles.map(&:title).join(', ')
 else
   puts '>>> Roles not created!'
@@ -35,8 +35,8 @@ todos = Todo.create([
   { id: 1, name: 'New todo', description: 'Todo description' },
   { id: 2, name: 'New todo', description: 'Todo description' }
 ])
-if todos.map(&:save)
-  puts "Default todo: " + todos.map(&:name).join(', ')
+if todos[1].save and todos[2].save
+  puts "Default todos: " + todos.map(&:name).join(', ')
 else
   puts '>>> Todo not created!'
 end
@@ -46,8 +46,8 @@ todolists = TodoList.create([
   { id: 1, name: 'New todo list', description: 'Todo list description', todo_ids: [1] },
   { id: 2, name: 'New todo list', description: 'Todo list description', todo_ids: [2] }
 ])
-if todolists.map(&:save)
-  puts "Default todo_list: " + todolists.map(&:name).join(', ')
+if todolists[1].save and todolists[2].save
+  puts "Default todo_lists: " + todolists.map(&:name).join(', ')
 else
   puts '>>> Todo list not created!'
 end
@@ -57,8 +57,8 @@ projects = Project.create([
   { id: 1, name: 'New project', description: 'Project description', todo_list_ids: [1] },
   { id: 2, name: 'New project', description: 'Project description', todo_list_ids: [2] }
 ])
-if projects.map(&:save)
-  puts "Default project: " + projects.map(&:name).join(', ')
+if projects[1].save and projects[2].save
+  puts "Default projects: " + projects.map(&:name).join(', ')
 else
   puts '>>> Project list not created!'
 end
@@ -69,8 +69,8 @@ accounts = Account.create([
   { id: 2, user_id: 2, project_ids: [2], project_count: 0   },
   { id: 3, user_id: 3, project_ids: [2], project_count: 5   }
 ])
-if accounts.map(&:save)
-  puts "Default account: " + accounts.map(&:user_id).map(&:to_s).join(', ')
+if accounts[1].save and accounts[2].save and accounts[3].save
+  puts "Default accounts: " + accounts.map(&:user_id).map(&:to_s).join(', ')
 else
   puts '>>> Account list not created!'
 end
