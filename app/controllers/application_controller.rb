@@ -25,22 +25,21 @@ class ApplicationController < ActionController::Base
     end
     
     def logout_workplace
-      request_to controller: ['home'] or
-      request_to controller: ['sessions', 'users'], action: ['new', 'create']
+      request_to controller: [:home] or
+      request_to controller: [:sessions, :users], action: [:new, :create]
     end
     
     def client_workplace
-      request_to controller: ['sessions', 'home', 'calendar', 'todo_lists', 'todos', 'events'] or
-      request_to controller: ['accounts'], action: ['show'] or
-      request_to controller: ['projects'], action: ['new', 'create', 'destroy', 'show', 'edit', 'update']
-      
+      request_to controller: [:sessions, :hom, :calendar, :todo_lists, :todos, :events] or
+      request_to controller: [:accounts], action: [:show] or
+      request_to controller: [:projects], action: [:new, :create, :destroy, :show, :edit, :update]
     end
       
     def visiter_workplace
-      request_to controller: ['sessions', 'home', 'calendar'] or
-      request_to controller: ['accounts'], action: ['show'] or
-      request_to controller: ['projects'], action: ['show'] or
-      request_to controller: ['todo_lists', 'todos', 'events'], action: ['index', 'show']
+      request_to controller: [:sessions, :home, :calendar] or
+      request_to controller: [:accounts], action: [:show] or
+      request_to controller: [:projects], action: [:show] or
+      request_to controller: [:todo_lists, :todos, :events], action: [:index, :show]
     end
     
     def admin_workplace
@@ -48,9 +47,9 @@ class ApplicationController < ActionController::Base
     end
     
     def request_to args={}
-      if args[:controller].include? params[:controller]
+      if args[:controller].to_s.include? params[:controller]
         if args[:action]
-          args[:action].include? params[:action]
+          args[:action].to_s.include? params[:action]
         else
           true
         end
