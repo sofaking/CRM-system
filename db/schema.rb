@@ -19,6 +19,11 @@ ActiveRecord::Schema.define(version: 20130914231402) do
     t.datetime "updated_at"
   end
 
+  create_table "accounts_projects", force: true do |t|
+    t.integer "project_id"
+    t.integer "account_id"
+  end
+
   create_table "events", force: true do |t|
     t.integer  "account_id"
     t.integer  "project_id"
@@ -36,11 +41,6 @@ ActiveRecord::Schema.define(version: 20130914231402) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "projects_accounts", force: true do |t|
-    t.integer "project_id"
-    t.integer "account_id"
   end
 
   create_table "roles", force: true do |t|
