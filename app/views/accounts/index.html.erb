@@ -1,25 +1,36 @@
-<h1>Listing accounts</h1>
+<div class='paper'>
+  <h1>Listing accounts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @accounts.each do |account| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= link_to 'Show', account %></td>
-        <td><%= link_to 'Edit', edit_account_path(account) %></td>
-        <td><%= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>User</th>
+        <th>Projects</th>
+        <th>To-do lists</th>
+        <th>To-dos</th>
+        <th>Events</th>
+        <th>Can create projects</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'New Account', new_account_path %>
+    <tbody>
+      <% @accounts.each do |account| %>
+        <tr>
+          <td><%= account.user.email %></td>
+          <td><%= account.projects.count %></td>
+          <% todolists = TodoList.select { |e| e.project_id || account.project_ids } %>
+          <td><%= todolists.count %></td>
+          <td><%= todolists.map(&:todos).count %></td>
+          <td><%= account.events.count  %></td>
+          <td><%= account.project_count %></td>
+          <td><%= link_to 'Show', account %></td>
+          <td><%= link_to 'Edit', edit_account_path(account) %></td>
+          <td><%= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

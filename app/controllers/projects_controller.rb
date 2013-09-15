@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = current_user.account.projects
+    @projects = Project.all if current_user.admin?
   end
 
   # GET /projects/1

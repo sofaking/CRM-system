@@ -5,9 +5,13 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     respond_to do |format|
-      format.html { @events = Event.where(project_id: params[:project_id]) }
+      format.html { 
+        @events = Event.where(project_id: params[:project_id])
+        @events = Event.all if current_user.admin?
+      }
       format.js  {
         @events = Event.select { |e| e.project_id || current_user.account.projects.map(&:id) }
+        @events = Event.all if current_user.admin?
         render json:  @events
       }
     end

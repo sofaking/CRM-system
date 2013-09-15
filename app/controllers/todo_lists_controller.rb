@@ -6,6 +6,7 @@ class TodoListsController < ApplicationController
   def index
     @project = Project.find(params[:project_id])
     @todo_lists = @project.todo_lists
+    @project = Project.all if current_user.admin?
   end
 
   # GET /todo_lists/1
