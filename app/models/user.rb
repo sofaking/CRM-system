@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   before_validation on: :create do
     self.email = email.downcase if attribute_present?("email")
     self.role ||= Role.find_by(title: "client")
-    self.account ||= Account.create
+    self.account ||= Account.create( project_count: 5 )
   end
   
   validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/, on: :create

@@ -11,7 +11,9 @@
     </div>
   <% end %>
 
-  <div class="actions">
+  <div class='field'>
+    <%= f.label :project_count %>
+    <%= f.select :project_count, options_for_select(0..300) %>
     <%= f.submit %>
   </div>
 <% end %>

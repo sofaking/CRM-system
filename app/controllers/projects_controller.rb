@@ -24,6 +24,11 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
+    if current_user.account.projects.count >= current_user.account.project_count
+      redirect_to current_user.account, notice: 'You have exceeded the number of possible projects.'
+      return
+    end
+      
     @project = Project.new(project_params)
     @project.account_ids = current_user.account.id
 
