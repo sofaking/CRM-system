@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20130915042736) do
     t.string   "name"
     t.string   "description"
     t.boolean  "done"
-    t.datetime "date"
+    t.datetime "datetime"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
