@@ -1,1 +1,1 @@
-$("<%=j render @todo %>").appendTo(".todos");
+$("<%=j render @todo %>").appendTo("#todo_list_<%= @todo.todo_list.id %>");
