@@ -6,7 +6,10 @@ class EventsController < ApplicationController
   def index
     respond_to do |format|
       format.html { @events = Event.where(project_id: params[:project_id]) }
-      format.js  { render json: Event.where(account_id: current_user.account.id) }
+      format.js  {
+        @events = Event.select { |e| e.project_id || current_user.account.projects.map(&:id) }
+        render json:  @events
+      }
     end
   end
 
