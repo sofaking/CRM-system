@@ -25,10 +25,11 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(project_params)
+    @project.account_ids = current_user.account.id
 
     respond_to do |format|
       if @project.save
-        format.html { redirect_to account_project_url(@project.account, @project), notice: 'Project was successfully created.' }
+        format.html { redirect_to account_project_url(current_user.account, @project), notice: 'Project was successfully created.' }
         format.js { @projects = @account.projects }
         format.json { render action: 'show', status: :created, location: @project }
       else
@@ -56,10 +57,9 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
-    account = @project.account
     @project.destroy
     respond_to do |format|
-      format.html { redirect_to account }
+      format.html { redirect_to current_user.account }
       format.js { @projects = @account.projects }
       format.json { head :no_content }
     end
@@ -73,6 +73,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:account_id, :name, :description, :todo_list_ids => [])
+      params.require(:project).permit(:name, :description)
     end
 end
