@@ -65,9 +65,9 @@ end
 
 Account.delete_all
 accounts = Account.create([
-  { id: 1, user_id: 1, project_ids: [1] },
-  { id: 2, user_id: 2, project_ids: [2] },
-  { id: 3, user_id: 3, project_ids: [2] }
+  { id: 1, user_id: 1, project_ids: [1], project_count: 300 },
+  { id: 2, user_id: 2, project_ids: [2], project_count: 0   },
+  { id: 3, user_id: 3, project_ids: [2], project_count: 5   }
 ])
 if accounts.map(&:save)
   puts "Default account: " + accounts.map(&:user_id).map(&:to_s).join(', ')
