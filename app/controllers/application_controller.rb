@@ -11,9 +11,9 @@ class ApplicationController < ActionController::Base
     def authorize
       if current_user
         if current_user.client?
-          redirect_to home_url unless client_workplace
+          redirect_to home_url, notice: 'You no have permissions to do this.' unless client_workplace
         elsif current_user.visiter?
-          redirect_to home_url unless visiter_workplace
+          redirect_to home_url, notice: 'You no have permissions to do this.' unless visiter_workplace
         elsif current_user.admin?
           redirect_to home_url unless admin_workplace
         else
