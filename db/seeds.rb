@@ -6,19 +6,19 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Role.delete_all
+Role.destroy_all
 roles = Role.create([ 
   {id: 1, title: "admin"},
   {id: 2, title: "visiter"},
   {id: 3, title: "client"}
 ])
-if roles[1].save and roles[2].save and roles[3].save
+if roles[0].save and roles[1].save and roles[2].save
   puts "Default roles: " + roles.map(&:title).join(', ')
 else
   puts '>>> Roles not created!'
 end
 
-User.delete_all
+User.destroy_all
 users = User.create([
   { id: 1, role_id: 1, email: 'admin@admin.com',     password: 'admin',   password_confirmation: 'admin' },
   { id: 2, role_id: 2, email: 'visiter@visiter.com', password: 'visiter', password_confirmation: 'visiter' },
@@ -30,46 +30,46 @@ else
   puts '>>> User not created!'
 end
 
-Todo.delete_all
+Todo.destroy_all
 todos = Todo.create([
   { id: 1, name: 'New todo', description: 'Todo description' },
   { id: 2, name: 'New todo', description: 'Todo description' }
 ])
-if todos[1].save and todos[2].save
+if todos[0].save and todos[1].save
   puts "Default todos: " + todos.map(&:name).join(', ')
 else
   puts '>>> Todo not created!'
 end
 
-TodoList.delete_all
+TodoList.destroy_all
 todolists = TodoList.create([
   { id: 1, name: 'New todo list', description: 'Todo list description', todo_ids: [1] },
   { id: 2, name: 'New todo list', description: 'Todo list description', todo_ids: [2] }
 ])
-if todolists[1].save and todolists[2].save
+if todolists[0].save and todolists[1].save
   puts "Default todo_lists: " + todolists.map(&:name).join(', ')
 else
   puts '>>> Todo list not created!'
 end
 
-Project.delete_all
+Project.destroy_all
 projects = Project.create([
   { id: 1, name: 'New project', description: 'Project description', todo_list_ids: [1] },
   { id: 2, name: 'New project', description: 'Project description', todo_list_ids: [2] }
 ])
-if projects[1].save and projects[2].save
+if projects[0].save and projects[1].save
   puts "Default projects: " + projects.map(&:name).join(', ')
 else
   puts '>>> Project list not created!'
 end
 
-Account.delete_all
+Account.destroy_all
 accounts = Account.create([
   { id: 1, user_id: 1, project_ids: [1], project_count: 300 },
   { id: 2, user_id: 2, project_ids: [2], project_count: 0   },
   { id: 3, user_id: 3, project_ids: [2], project_count: 5   }
 ])
-if accounts[1].save and accounts[2].save and accounts[3].save
+if accounts[0].save and accounts[1].save and accounts[2].save
   puts "Default accounts: " + accounts.map(&:user_id).map(&:to_s).join(', ')
 else
   puts '>>> Account list not created!'
