@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
     end
     
     def client_workplace
-      request_to controller: ['sessions', 'home', 'todolists', 'todos', 'events'] or
+      request_to controller: ['sessions', 'home', 'calendar', 'todolists', 'todos', 'events'] or
       request_to controller: ['accounts'], action: ['show'] or
       request_to controller: ['projects'], action: ['new', 'create', 'destroy', 'show', 'edit', 'update']
       
