@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
     end
       
     def visiter_workplace
-      request_to controller: ['sessions', 'home'] or
+      request_to controller: ['sessions', 'home', 'calendar'] or
       request_to controller: ['accounts'], action: ['show'] or
       request_to controller: ['projects'], action: ['show'] or
       request_to controller: ['todolists', 'todos', 'events'], action: ['index', 'show']
