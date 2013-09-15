@@ -9,8 +9,8 @@
   </div>  
   
   <ul id='project_menu'>
-    <li><%= link_to "Todo lists (#{@project.todo_lists.count})", account_project_todo_lists_path(@project.account, @project) %></li>
-    <li><%= link_to "Events (#{@project.events.count})", account_events_path(@project.account, @project) %></li>
+    <li><%= link_to "Todo lists (#{@project.todo_lists.count})", account_project_todo_lists_path(@project.accounts, @project) %></li>
+    <li><%= link_to "Events (#{@project.events.count})", account_events_path(@project.accounts, @project) %></li>
   </ul>
   
   <h1 id='todo_lists_label'>To-do lists</h1>

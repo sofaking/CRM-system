@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', url: [@todo.todo_list.project.account, @todo.todo_list.project, @todo.todo_list, @todo] %> |
+<%= link_to 'Show', url: [current_user.account, @todo.todo_list.project, @todo.todo_list, @todo] %> |
 <%= link_to 'Back', :back %>

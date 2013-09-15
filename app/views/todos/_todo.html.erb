@@ -1,11 +1,11 @@
 <% cache todo do %>
 <li class='todo' id='todo_<%= todo.id %>'>
   <span class='editing_todo_<%= todo.id %> field'>
-    <%= check_box 'todo', 'done', checked: todo.done, data: {url: account_project_todo_list_todo_path(todo.todo_list.project.account, todo.todo_list.project, todo.todo_list, todo, todo: {done: not(todo.done)}, commit: 'Update todo done'),  remote: true, method: :put}%>
-    <%= link_to todo.name, [todo.todo_list.project.account, todo.todo_list.project, todo.todo_list, todo] %>
+    <%= check_box 'todo', 'done', checked: todo.done, data: {url: account_project_todo_list_todo_path(todo.todo_list.project.accounts, todo.todo_list.project, todo.todo_list, todo, todo: {done: not(todo.done)}, commit: 'Update todo done'),  remote: true, method: :put}%>
+    <%= link_to todo.name, account_project_todo_list_todo_path(current_user.account, todo.todo_list.project, todo.todo_list, todo) %>
     <span class='actions'>
-      <%= link_to 'Edit', edit_account_project_todo_list_todo_path(todo.todo_list.project.account, todo.todo_list.project, todo.todo_list, todo), method: :get, remote: true %>
-      <%= link_to 'Destroy', [todo.todo_list.project.account, todo.todo_list.project, todo.todo_list, todo], method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
+      <%= link_to 'Edit', edit_account_project_todo_list_todo_path(current_user.account, todo.todo_list.project, todo.todo_list, todo), method: :get, remote: true %>
+      <%= link_to 'Destroy', account_project_todo_list_todo_path(current_user.account, todo.todo_list.project, todo.todo_list, todo), method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
     </span>
   </span>
 </li>

@@ -1,9 +1,9 @@
 <% cache project do %>
-  <%= link_to account_project_path(project.account, project), class: [:project, :paper] do %>
+  <%= link_to account_project_path(current_user.account, project), class: [:project, :paper] do %>
     <label id='project_name'><%= project.name %></label><br/>
     <label id='project_description'><%= project.description %></label>
     <div id='people'>
-      <%= project.account.user.email %>
+      <%= project.accounts.map(&:user).map(&:email) %>
     </div>
   <% end %>
 <% end %>
