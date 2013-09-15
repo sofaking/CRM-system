@@ -1,6 +1,5 @@
 class TodoListsController < ApplicationController
   before_action :set_todo_list, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authorize
 
   # GET /todo_lists
   # GET /todo_lists.json

@@ -1,6 +1,5 @@
 class TodosController < ApplicationController
   before_action :set_todo, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authorize
 
   # GET /todos
   # GET /todos.json
