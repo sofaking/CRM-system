@@ -44,7 +44,7 @@ class TodosController < ApplicationController
     respond_to do |format|
       if @todo.update(todo_params)
         format.html { redirect_to home_url, notice: 'Todo was successfully updated.' }
-        format.js { @todo_list = @todo.todo_list }
+        format.js
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
