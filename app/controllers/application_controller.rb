@@ -36,10 +36,9 @@ class ApplicationController < ActionController::Base
     end
       
     def visiter_workplace
-      request_to controller: [:sessions, :home, :calendar] or
+      request_to controller: [:sessions, :home, :calendar, :todo_lists, :todos, :events] or
       request_to controller: [:accounts], action: [:show] or
-      request_to controller: [:projects], action: [:show] or
-      request_to controller: [:todo_lists, :todos, :events], action: [:index, :show]
+      request_to controller: [:projects], action: [:show, :edit, :update]
     end
     
     def admin_workplace
