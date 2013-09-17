@@ -7,7 +7,6 @@
         <th>User</th>
         <th>Projects</th>
         <th>To-do lists</th>
-        <th>To-dos</th>
         <th>Events</th>
         <th>Can create projects</th>
         <th></th>
@@ -21,9 +20,8 @@
         <tr>
           <td><%= account.user.email %></td>
           <td><%= account.projects.count %></td>
-          <% todolists = TodoList.select { |e| e.project_id || account.project_ids } %>
+          <% todolists = account.projects.map(&:todo_lists) %>
           <td><%= todolists.count %></td>
-          <td><%= todolists.map(&:todos).count %></td>
           <td><%= account.events.count  %></td>
           <td><%= account.project_count %></td>
           <td><%= link_to 'Show', account %></td>
