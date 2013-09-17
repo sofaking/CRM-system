@@ -10,7 +10,7 @@ class EventsController < ApplicationController
         @events = Event.all if current_user.admin?
       }
       format.js  {
-        @events = Event.select { |e| e.project_id || current_user.account.projects.map(&:id) }
+        @events = Event.select { |e| current_user.account.projects.map(&:id) and [e.project_id] }
         @events = Event.all if current_user.admin?
         render json:  @events
       }
